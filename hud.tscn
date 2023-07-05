@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://pny7dv07qjx0"]
+[gd_scene load_steps=2 format=3 uid="uid://pny7dv07qjx0"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_p5q0j"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_p5q0j")
 
-[node name="Label" type="Label" parent="."]
+[node name="GameNameLabel" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -17,7 +20,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Game name"
 
-[node name="Button" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -31,3 +34,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Start Game"
+
+[connection signal="button_up" from="StartButton" to="." method="_on_button_button_up"]
