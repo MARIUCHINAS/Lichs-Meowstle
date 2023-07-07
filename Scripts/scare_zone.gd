@@ -30,3 +30,4 @@ func _on_body_entered(body):
 	if body.name == "Enemy":
 		print("sned")
 		emit_signal("ScareZoneActivated")
+		body.scared = true
