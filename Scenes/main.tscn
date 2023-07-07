@@ -5,5 +5,3 @@
 [node name="Main" type="Node"]
 
 [node name="HUD" parent="." instance=ExtResource("1_qt6np")]
-
-[node name="test" type="Node" parent="."]
