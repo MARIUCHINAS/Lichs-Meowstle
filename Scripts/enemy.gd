@@ -42,4 +42,5 @@ func _on_hud_start_game():
 
 
 func _on_scare_zone_scare_zone_activated():
+	print("reveiced")
 	rotate(3.141593) # 3.141593 This is Radians In degrees it would be 180
