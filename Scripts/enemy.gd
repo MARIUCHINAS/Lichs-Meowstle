@@ -39,3 +39,7 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 func _on_hud_start_game():
 	started = true
 	$LookTimer.start()
+
+
+func _on_scare_zone_scare_zone_activated():
+	rotate(3.141593) # 3.141593 This is Radians In degrees it would be 180
