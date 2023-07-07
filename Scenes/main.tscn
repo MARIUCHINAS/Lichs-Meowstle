@@ -23,4 +23,3 @@ position = Vector2(1068, 324)
 
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
 [connection signal="start_game" from="HUD" to="Enemy" method="_on_hud_start_game"]
-[connection signal="ScareZoneActivated" from="ScareZone" to="Enemy" method="_on_scare_zone_scare_zone_activated"]

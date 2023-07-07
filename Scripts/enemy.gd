@@ -40,7 +40,6 @@ func _on_hud_start_game():
 	started = true
 	$LookTimer.start()
 
-
-func _on_scare_zone_scare_zone_activated():
-	print("reveiced")
-	rotate(3.141593) # 3.141593 This is Radians In degrees it would be 180
+# Hello Please fix this function bellow. If there is no function find a way to connect
+# the signal ScareZoneActivated
+# It does not receive any signals therefore the enemy nver gets scared
