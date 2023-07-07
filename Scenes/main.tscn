@@ -5,3 +5,9 @@
 [node name="Main" type="Node"]
 
 [node name="HUD" parent="." instance=ExtResource("1_qt6np")]
+
+[node name="IsProAcceptDialog" type="AcceptDialog" parent="."]
+size = Vector2i(101, 100)
+visible = true
+ok_button_text = "Taip as pro"
+dialog_text = "Is pro?"
