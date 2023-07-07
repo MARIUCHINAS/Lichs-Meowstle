@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://l8dsu225s5tt"]
+[gd_scene load_steps=3 format=3 uid="uid://l8dsu225s5tt"]
 
 [ext_resource type="PackedScene" uid="uid://pny7dv07qjx0" path="res://Scenes/hud.tscn" id="1_qt6np"]
+[ext_resource type="PackedScene" uid="uid://bmd7hii5lk861" path="res://Scenes/player.tscn" id="2_0ge8o"]
 
 [node name="Main" type="Node"]
 
 [node name="HUD" parent="." instance=ExtResource("1_qt6np")]
 visible = false
+
+[node name="Player" parent="." instance=ExtResource("2_0ge8o")]
