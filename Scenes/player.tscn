@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmd7hii5lk861"]
+
+[ext_resource type="Texture2D" uid="uid://dncpu7ajd8c0n" path="res://icon.svg" id="1_ac5kq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_an3fg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ac5kq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_an3fg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -54.0
+offset_right = 24.0
+offset_bottom = -28.0
+text = "Player"
