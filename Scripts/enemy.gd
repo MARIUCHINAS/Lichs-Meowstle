@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+var random_direction
+
+var exited = false
+
 @export var speed = 10
 
 func _ready():
@@ -17,6 +21,16 @@ func _physics_process(delta):
 
 
 func _on_look_timer_timeout():
-	var random_direction = randf_range(0, 6.283185)
-	rotation = random_direction # 6.283185 radians is 360 degrees
+	random_direction = randf_range(0, 360)
+	if exited:
+		random_direction = -random_direction
+	rotation_degrees = random_direction
 	print(random_direction)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	exited = true
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered():
+	exited = false
