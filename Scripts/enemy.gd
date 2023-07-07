@@ -41,5 +41,5 @@ func _on_hud_start_game():
 	$LookTimer.start()
 
 # Hello Please fix this function bellow. If there is no function find a way to connect
-# the signal ScareZoneActivated
+# the signal ScareZoneActivated Plese
 # It does not receive any signals therefore the enemy nver gets scared
