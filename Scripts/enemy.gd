@@ -6,10 +6,14 @@ var exited = false
 
 var started = false
 
+var scared = false
+
 @export var speed = 4
 
 func _ready():
 	randomize()
+	
+	
 	
 func _enter_tree():
 	pass
@@ -21,7 +25,9 @@ func _physics_process(delta):
 	if started:
 		var velocity = Vector2(speed, 0).rotated((global_rotation))
 		move_and_collide(velocity)
-
+		if scared:
+			rotate(3.141593)
+			scared = false
 
 func _on_look_timer_timeout():
 	random_direction = randf_range(0, 360)
@@ -43,3 +49,4 @@ func _on_hud_start_game():
 # Hello Please fix this function bellow. If there is no function find a way to connect
 # the signal ScareZoneActivated Plese
 # It does not receive any signals therefore the enemy nver gets scared
+
