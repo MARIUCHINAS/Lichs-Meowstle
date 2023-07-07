@@ -4,7 +4,9 @@ var random_direction
 
 var exited = false
 
-@export var speed = 10
+var started = false
+
+@export var speed = 4
 
 func _ready():
 	randomize()
@@ -16,21 +18,24 @@ func _process(delta):
 	pass
 	
 func _physics_process(delta):
-	var velocity = Vector2(speed, 0).rotated((global_rotation))
-	move_and_collide(velocity)
+	if started:
+		var velocity = Vector2(speed, 0).rotated((global_rotation))
+		move_and_collide(velocity)
 
 
 func _on_look_timer_timeout():
-	if !exited:
-		random_direction = randf_range(0, 360)
+	random_direction = randf_range(0, 360)
 	rotation_degrees = random_direction
 	print(random_direction)
 
-
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	exited = true
-	random_direction = -random_direction
-
+	rotate(3.141593) # 3.141593 This is Radians In degrees it would be 180
+	
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
 	exited = false
+
+
+func _on_hud_start_game():
+	started = true
+	$LookTimer.start()

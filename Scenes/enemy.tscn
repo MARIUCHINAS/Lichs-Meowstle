@@ -17,7 +17,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfky6"]
 
 [node name="Enemy" type="CharacterBody2D"]
-position = Vector2(532, 274)
 script = ExtResource("1_h04w8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -37,8 +36,6 @@ text = "Enemy"
 metadata/_edit_use_anchors_ = true
 
 [node name="LookTimer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(3, 3)
