@@ -21,15 +21,15 @@ func _physics_process(delta):
 
 
 func _on_look_timer_timeout():
-	random_direction = randf_range(0, 360)
-	if exited:
-		random_direction = -random_direction
+	if !exited:
+		random_direction = randf_range(0, 360)
 	rotation_degrees = random_direction
 	print(random_direction)
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	exited = true
+	random_direction = -random_direction
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
