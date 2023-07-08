@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhatxis08d52d"]
+[gd_scene load_steps=11 format=3 uid="uid://bkeie63vq3cgr"]
 
-[ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="1_8wx0o"]
+[ext_resource type="Texture2D" uid="uid://djsrb7wgbg4k5" path="res://16x16template.png" id="1_8wx0o"]
+[ext_resource type="Script" path="res://explosion.gd" id="2_srqne"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ehbc2"]
 atlas = ExtResource("1_8wx0o")
@@ -22,6 +23,10 @@ region = Rect2(102, 102, 33, 33)
 atlas = ExtResource("1_8wx0o")
 region = Rect2(136, 102, 33, 33)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xki2"]
+atlas = ExtResource("1_8wx0o")
+region = Rect2(201, 0, 67, 67)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_syren"]
 animations = [{
 "frames": [{
@@ -39,13 +44,26 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_72qra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xki2")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4jl30"]
+radius = 13.5093
+
 [node name="Explosion" type="AnimatedSprite2D"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_syren")
-frame_progress = 0.880146
+frame_progress = 0.619615
+script = ExtResource("2_srqne")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_4jl30")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://l8dsu225s5tt"]
+[gd_scene load_steps=11 format=3 uid="uid://l8dsu225s5tt"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_a7alu"]
 [ext_resource type="PackedScene" uid="uid://pny7dv07qjx0" path="res://Scenes/hud.tscn" id="1_qt6np"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://g7fyi7uu3mgx" path="res://Scenes/enemy.tscn" id="3_voi6q"]
 [ext_resource type="PackedScene" uid="uid://cle5aa4pt7ii3" path="res://Scenes/area_attack_line_middle.tscn" id="4_bgtmm"]
 [ext_resource type="PackedScene" uid="uid://npnisnjvohj" path="res://ground.tscn" id="8_jpmju"]
+[ext_resource type="PackedScene" path="res://boss.tscn" id="10_sfd34"]
+[ext_resource type="Script" path="res://boss.gd" id="11_oc7q0"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_a7alu")
@@ -20,7 +22,8 @@ AttackZoneScene = ExtResource("4_bgtmm")
 [node name="Player" parent="." instance=ExtResource("2_0ge8o")]
 
 [node name="Ground" parent="." instance=ExtResource("8_jpmju")]
-position = Vector2(576, 324)
+position = Vector2(585, 327)
+scale = Vector2(2, 2)
 
 [node name="Enemy" parent="." instance=ExtResource("3_voi6q")]
 position = Vector2(283, 313)
@@ -33,6 +36,12 @@ wait_time = 5.0
 
 [node name="AttackZoneCollisionTimer" type="Timer" parent="."]
 wait_time = 4.0
+
+[node name="Boss" parent="." instance=ExtResource("10_sfd34")]
+position = Vector2(517, 71)
+scale = Vector2(4, 4)
+frame_progress = 0.26566
+script = ExtResource("11_oc7q0")
 
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
 [connection signal="start_game" from="HUD" to="Enemy" method="_on_hud_start_game"]
