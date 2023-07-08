@@ -12,14 +12,6 @@ func _process(delta):
 	pass
 
 
-func _on_area_entered(area):
-	print(area)
-	print(area.name)
-	if area.name == "Player":
-		print("sned")
-		emit_signal("ScareZoneActivated")
-
-
 func _on_self_destruct_timer_timeout():
 	queue_free()
 
