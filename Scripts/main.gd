@@ -1,6 +1,7 @@
 extends Node
 
-var game_started = true
+var game_started = false
+var health = 100
 
 @export var ScareZoneScene: PackedScene
 @export var BoulderAreaScene: PackedScene
@@ -12,6 +13,7 @@ var screen_size: Vector2
 var AttackZoneArea
 
 var KillEnemy = false
+var attack_pos=Vector2(0,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,10 +35,8 @@ func _input(event):
 		
 		
 			if (event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT):
-				var mouse_position = get_viewport().get_mouse_position()
-				var curr = AreaAttack.instantiate()
-				get_tree().get_root().add_child(curr)
-				curr.position = mouse_position
+				attack_pos=get_viewport().get_mouse_position()
+				$"Attack Timer".start()
 		
 			
 
@@ -55,3 +55,9 @@ func _on_enemy_about_to_die():
 
 func _on_enemy_about_to_not_die():
 	KillEnemy = false
+
+
+func _on_attack_timer_timeout():
+	var curr = AreaAttack.instantiate()
+	get_tree().get_root().add_child(curr)
+	curr.position = attack_pos

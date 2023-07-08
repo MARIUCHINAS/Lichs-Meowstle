@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://l8dsu225s5tt"]
+[gd_scene load_steps=17 format=3 uid="uid://l8dsu225s5tt"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_a7alu"]
 [ext_resource type="PackedScene" uid="uid://pny7dv07qjx0" path="res://Scenes/hud.tscn" id="1_qt6np"]
-[ext_resource type="PackedScene" uid="uid://bmd7hii5lk861" path="res://Scenes/player.tscn" id="2_0ge8o"]
 [ext_resource type="PackedScene" uid="uid://ck5kshxk13pmq" path="res://Scenes/scare_zone.tscn" id="2_rb0fe"]
 [ext_resource type="PackedScene" uid="uid://l7ncvmtsiowf" path="res://Scenes/boulder.tscn" id="3_qruod"]
 [ext_resource type="PackedScene" uid="uid://g7fyi7uu3mgx" path="res://Scenes/enemy.tscn" id="3_voi6q"]
@@ -11,8 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://npnisnjvohj" path="res://ground.tscn" id="8_jpmju"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="10_sfd34"]
 [ext_resource type="Script" path="res://boss.gd" id="11_oc7q0"]
+[ext_resource type="PackedScene" path="res://health_bar.tscn" id="12_skt15"]
 [ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="12_tcdil"]
 [ext_resource type="PackedScene" path="res://candles.tscn" id="13_db52u"]
+[ext_resource type="Script" path="res://health_bar.gd" id="13_jexxa"]
+[ext_resource type="PackedScene" path="res://energy_bar.tscn" id="15_ciypt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqhvf"]
 atlas = ExtResource("12_tcdil")
@@ -25,7 +27,14 @@ BoulderAreaScene = ExtResource("3_qruod")
 AttackZoneScene = ExtResource("4_bgtmm")
 AreaAttack = ExtResource("5_l1s78")
 
-[node name="Player" parent="." instance=ExtResource("2_0ge8o")]
+[node name="health bar" parent="." instance=ExtResource("12_skt15")]
+z_index = 1
+offset_left = 25.0
+offset_top = 19.0
+offset_right = 35.0
+offset_bottom = 82.0
+scale = Vector2(4, 4)
+script = ExtResource("13_jexxa")
 
 [node name="Ground" parent="." instance=ExtResource("8_jpmju")]
 modulate = Color(0.560784, 0.560784, 0.560784, 1)
@@ -46,7 +55,6 @@ frame_progress = 0.26566
 script = ExtResource("11_oc7q0")
 
 [node name="HUD" parent="." instance=ExtResource("1_qt6np")]
-visible = false
 
 [node name="throne" type="Sprite2D" parent="."]
 modulate = Color(0.913725, 0.913725, 0.913725, 1)
@@ -57,37 +65,48 @@ texture = SubResource("AtlasTexture_qqhvf")
 
 [node name="candles" parent="." instance=ExtResource("13_db52u")]
 position = Vector2(380, 142)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 
 [node name="candles2" parent="." instance=ExtResource("13_db52u")]
 position = Vector2(661, 142)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 
 [node name="candles3" parent="." instance=ExtResource("13_db52u")]
 position = Vector2(81, 291)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 
 [node name="candles4" parent="." instance=ExtResource("13_db52u")]
 position = Vector2(78, 507)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 
 [node name="candles5" parent="." instance=ExtResource("13_db52u")]
 position = Vector2(945, 280)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 
 [node name="candles6" parent="." instance=ExtResource("13_db52u")]
 position = Vector2(942, 508)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 
 [node name="candles7" parent="." instance=ExtResource("13_db52u")]
 position = Vector2(650, 804)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 
 [node name="candles8" parent="." instance=ExtResource("13_db52u")]
 position = Vector2(392, 798)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
+
+[node name="energy bar" parent="." instance=ExtResource("15_ciypt")]
+offset_left = 941.0
+offset_top = 12.0
+offset_right = 951.0
+offset_bottom = 75.0
+scale = Vector2(4, 4)
+
+[node name="Attack Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="AboutToDie" from="Enemy" to="." method="_on_enemy_about_to_die"]
 [connection signal="AboutToNotDie" from="Enemy" to="." method="_on_enemy_about_to_not_die"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
 [connection signal="start_game" from="HUD" to="Enemy" method="_on_hud_start_game"]
+[connection signal="timeout" from="Attack Timer" to="." method="_on_attack_timer_timeout"]
