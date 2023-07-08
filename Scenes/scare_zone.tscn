@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ck5kshxk13pmq"]
 
 [ext_resource type="Script" path="res://Scripts/scare_zone.gd" id="1_jt706"]
-[ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="2_ljmsg"]
+[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="2_ljmsg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivnxa"]
 atlas = ExtResource("2_ljmsg")

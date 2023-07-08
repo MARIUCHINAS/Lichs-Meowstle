@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8tpa21vfwywu"]
+
+[ext_resource type="Texture2D" uid="uid://djsrb7wgbg4k5" path="res://16x16template.png" id="1_anebi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1yk6"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3f836"]
+bg_color = Color(1, 0.168627, 0.196078, 1)
+
+[sub_resource type="Theme" id="Theme_ptgr8"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_q1yk6")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_3f836")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwegn"]
+atlas = ExtResource("1_anebi")
+region = Rect2(136, 0, 16, 67)
+
+[node name="health bar" type="ProgressBar"]
+offset_right = 10.0
+offset_bottom = 63.0
+scale = Vector2(1, 0.993229)
+theme = SubResource("Theme_ptgr8")
+value = 46.53
+fill_mode = 3
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(5, 31.2113)
+texture = SubResource("AtlasTexture_mwegn")

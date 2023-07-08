@@ -27,7 +27,6 @@ func _enter_tree():
 
 	
 func _physics_process(delta):
-	
 	# Check for scare zones and run away from them
 	for i in get_tree().get_root().get_children():
 			if i.name == "ScareZone":
@@ -35,7 +34,7 @@ func _physics_process(delta):
 				velocity=(position-telepos)
 				velocity = velocity.normalized() * speed
 	var collision = move_and_collide(velocity)
-	print(collision)
+	#print(collision)
 
 func Indanger(InDanger):
 	if InDanger:

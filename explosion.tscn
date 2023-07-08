@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhatxis08d52d"]
+[gd_scene load_steps=12 format=3 uid="uid://bhatxis08d52d"]
 
-[ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="1_8wx0o"]
+[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="1_8wx0o"]
 [ext_resource type="Script" path="res://explosion.gd" id="2_srqne"]
+[ext_resource type="PackedScene" path="res://light.tscn" id="3_r3d46"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ehbc2"]
 atlas = ExtResource("1_8wx0o")
@@ -68,5 +69,8 @@ script = ExtResource("2_srqne")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_4jl30")
+
+[node name="light" parent="." instance=ExtResource("3_r3d46")]
+modulate = Color(1, 0.301961, 0, 0.439216)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

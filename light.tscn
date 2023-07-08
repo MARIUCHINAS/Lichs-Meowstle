@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://6xq1lx6ux3yc"]
+
+[ext_resource type="Texture2D" uid="uid://djsrb7wgbg4k5" path="res://16x16template.png" id="1_2mjx6"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yk33o"]
+blend_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o55ck"]
+atlas = ExtResource("1_2mjx6")
+region = Rect2(170, 0, 67, 67)
+
+[node name="light" type="Sprite2D"]
+material = SubResource("CanvasItemMaterial_yk33o")
+texture = SubResource("AtlasTexture_o55ck")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhxy7gch5cef4"]
+
+[ext_resource type="Texture2D" uid="uid://djsrb7wgbg4k5" path="res://16x16template.png" id="1_rnrjk"]
+[ext_resource type="PackedScene" uid="uid://6xq1lx6ux3yc" path="res://light.tscn" id="2_stuha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knmdi"]
+atlas = ExtResource("1_rnrjk")
+region = Rect2(102, 0, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxuje"]
+atlas = ExtResource("1_rnrjk")
+region = Rect2(119, 0, 16, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m3s3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knmdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxuje")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="candles" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_m3s3d")
+frame_progress = 0.161885
+
+[node name="light" parent="." instance=ExtResource("2_stuha")]
+modulate = Color(0.858824, 0.447059, 0.282353, 0.372549)
+position = Vector2(0, -9)
+scale = Vector2(2, 2)

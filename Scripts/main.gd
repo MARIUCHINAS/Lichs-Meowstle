@@ -1,6 +1,6 @@
 extends Node
 
-var game_started = false
+var game_started = true
 
 @export var ScareZoneScene: PackedScene
 @export var BoulderAreaScene: PackedScene
