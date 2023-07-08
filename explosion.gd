@@ -10,3 +10,4 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	get_tree().get_root().get_node("Main").health -= 5
+	get_tree().get_root().get_node("Main").get_node("Enemy").get_node("MeehAudioStreamPlayer").play()

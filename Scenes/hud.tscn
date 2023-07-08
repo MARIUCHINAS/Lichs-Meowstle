@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://pny7dv07qjx0"]
+[gd_scene load_steps=10 format=3 uid="uid://pny7dv07qjx0"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_5lxyv"]
 [ext_resource type="AudioStream" uid="uid://0qlf14sqbiqx" path="res://Sounds/GameStart.wav" id="2_vkmfn"]
@@ -9,6 +9,9 @@
 base_font = ExtResource("3_mod0a")
 
 [sub_resource type="FontVariation" id="FontVariation_q0wc7"]
+base_font = ExtResource("3_mod0a")
+
+[sub_resource type="FontVariation" id="FontVariation_lgxip"]
 base_font = ExtResource("3_mod0a")
 
 [sub_resource type="Animation" id="Animation_m2qnn"]
@@ -95,6 +98,28 @@ text = "Credits"
 
 [node name="PlayButtonAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vkmfn")
+
+[node name="HealthLabel" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 479.0
+offset_top = 876.0
+offset_right = 571.0
+offset_bottom = 899.0
+scale = Vector2(1, 0.993738)
+theme_override_fonts/font = SubResource("FontVariation_lgxip")
+text = "Health:      %"
+horizontal_alignment = 1
+
+[node name="HealthLabel" type="Label" parent="HealthLabel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 1.0063
+offset_right = 92.0
+offset_bottom = 24.0063
+scale = Vector2(1, 0.993738)
+theme_override_fonts/font = SubResource("FontVariation_lgxip")
+text = "100"
 
 [node name="CreditsColorRect" type="ColorRect" parent="."]
 visible = false
