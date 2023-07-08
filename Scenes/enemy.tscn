@@ -1,31 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://g7fyi7uu3mgx"]
+[gd_scene load_steps=5 format=3 uid="uid://g7fyi7uu3mgx"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_h04w8"]
-[ext_resource type="Texture2D" uid="uid://dncpu7ajd8c0n" path="res://icon.svg" id="1_w3n7q"]
+[ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="2_5lp73"]
 [ext_resource type="PackedScene" uid="uid://cname5jyvgqpl" path="res://Scenes/stat.tscn" id="3_uliyg"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1v7ti"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_w3n7q")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfky6"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_h04w8")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_1v7ti")
+[node name="cat" parent="." instance=ExtResource("2_5lp73")]
+scale = Vector2(1.5, 1.5)
+animation = &"scared"
+frame_progress = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3.12, 3.16)
+scale = Vector2(1.32, 2.56)
 shape = SubResource("RectangleShape2D_tfky6")
 
 [node name="Label" type="Label" parent="."]
@@ -40,7 +30,7 @@ metadata/_edit_use_anchors_ = true
 wait_time = 1.7
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-scale = Vector2(3, 3)
+scale = Vector2(1.46435, 2.84559)
 
 [node name="Stat" parent="." instance=ExtResource("3_uliyg")]
 
