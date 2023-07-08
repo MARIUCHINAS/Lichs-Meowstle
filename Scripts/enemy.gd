@@ -36,7 +36,7 @@ func _physics_process(delta):
 	var panic_multiplier = 3 # speed is multiplied by this durng panic
 	speed = base_speed * $PanicCountdownTimer.time_left/$PanicCountdownTimer.wait_time  * panic_multiplier + 1
 	if started:
-		var velocity = Vector2(speed, 0).rotated((global_rotation)) # Determanes velocity
+		var velocity = Vector2(speed, 0).rotated((global_rotation)) * delta # Determanes velocity
 		move_and_collide(velocity) # Moves and collides using that velocity
 		if scared:
 			rotate(3.141593) # Rotates 3.141593 Radians or 180 degrees
