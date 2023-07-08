@@ -5,6 +5,7 @@ var game_started = false
 @export var ScareZoneScene: PackedScene
 @export var BoulderAreaScene: PackedScene
 @export var AttackZoneScene: PackedScene
+var AreaAttack=load("res://area_attack.tscn")
 
 var screen_size: Vector2
 
@@ -39,7 +40,10 @@ func _input(event):
 		#		emit_signal("BoulderSpawn")
 			
 			if (event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT):
-				pass
+				var mouse_position = get_viewport().get_mouse_position()
+				var curr=AreaAttack.instantiate()
+				get_tree().get_root().add_child(curr)
+				curr.position=mouse_position
 		
 			
 
@@ -63,18 +67,20 @@ func _on_enemy_about_to_not_die():
 
 
 func _on_spawn_attack_zone_timer_timeout():
-	var AttackZoneSpawnLocation = Vector2(screen_size / 2)
-	AttackZoneArea = AttackZoneScene.instantiate()
-	get_tree().get_root().add_child(AttackZoneArea)
-	AttackZoneArea.position = AttackZoneSpawnLocation
-	emit_signal("BoulderSpawn")
+	pass
+	#var AttackZoneSpawnLocation = Vector2(screen_size / 2)
+	#AttackZoneArea = AttackZoneScene.instantiate()
+	#get_tree().get_root().add_child(AttackZoneArea)
+	#AttackZoneArea.position = AttackZoneSpawnLocation
+	#emit_signal("BoulderSpawn")
 
 
 func _on_attack_zone_collision_timer_timeout():
-	if KillEnemy:
-		$Enemy.queue_free()
-	else:
-		print("Congratz")
-		for i in get_tree().get_root().get_children():
-			if i.name == "AreaAttackLineMiddle":
-				i.queue_free()
+	pass
+	#if KillEnemy:
+	#	$Enemy.queue_free()
+	#else:
+	#	print("Congratz")
+	#	for i in get_tree().get_root().get_children():
+	#		if i.name == "AreaAttackLineMiddle":
+	#			i.queue_free()
