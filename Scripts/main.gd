@@ -32,6 +32,7 @@ func _input(event):
 				var ScareZone = ScareZoneScene.instantiate()
 				get_tree().get_root().add_child(ScareZone)
 				ScareZone.position = ScareZoneSpawnLocation
+				energy-=.5
 		
 		
 		

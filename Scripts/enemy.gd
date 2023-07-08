@@ -74,9 +74,6 @@ func _on_hud_start_game():
 	$RehealTimer.start()
 	
 # run by the scare zone area2d whenever it collides with the player
-func _on_enter_scare_zone():
-	scared = true
-	$PanicCountdownTimer.start()
 
 
 
