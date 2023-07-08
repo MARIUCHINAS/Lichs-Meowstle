@@ -54,21 +54,13 @@ script = ExtResource("1_jt706")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.4, 0.4)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_qq3dv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_xmlho")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -42.0
-offset_top = -55.0
-offset_right = 43.0
-offset_bottom = -29.0
-text = "Scare Zone"
-horizontal_alignment = 1
 
 [node name="SelfDestructTimer" type="Timer" parent="."]
 wait_time = 0.6
