@@ -10,21 +10,13 @@
 script = ExtResource("1_h04w8")
 
 [node name="cat" parent="." instance=ExtResource("3_8mrqr")]
-scale = Vector2(1.5, 1.5)
-animation = &"scared"
+scale = Vector2(3, 3)
+animation = &"walking left"
 frame_progress = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.32, 2.56)
 shape = SubResource("RectangleShape2D_tfky6")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -25.0
-offset_top = -54.0
-offset_right = 24.0
-offset_bottom = -28.0
-text = "Enemy"
-metadata/_edit_use_anchors_ = true
 
 [node name="LookTimer" type="Timer" parent="."]
 wait_time = 1.7
