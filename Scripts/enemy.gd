@@ -58,9 +58,18 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 func _on_hud_start_game():
 	started = true
 	$LookTimer.start()
+	$RehealTimer.start()
 	
 # run by the scare zone area2d whenever it collides with the player
 func _on_enter_scare_zone():
 	scared = true
 	$PanicCountdownTimer.start()
 
+
+
+func _on_reheal_timer_timeout():
+	#
+	#if get_node("res://Scenes/hud.tscn").health >= 100:
+	#	print("baba")
+	#else:
+	#	get_node("res://Scenes/hud.tscn").health += 1
