@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://pny7dv07qjx0"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_5lxyv"]
-[ext_resource type="AudioStream" uid="uid://uoomwmpbftl" path="res://Sounds/pickupCoin.wav" id="2_byfeo"]
+[ext_resource type="AudioStream" uid="uid://c4g5dtbrr5kg" path="res://Sounds/GameStart.wav" id="2_vkmfn"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_5lxyv")
@@ -45,6 +45,6 @@ theme_override_font_sizes/font_size = 32
 text = "Start Game"
 
 [node name="PlayButtonAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_byfeo")
+stream = ExtResource("2_vkmfn")
 
 [connection signal="button_up" from="StartButton" to="." method="_on_button_button_up"]
