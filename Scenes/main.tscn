@@ -10,11 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://npnisnjvohj" path="res://ground.tscn" id="8_jpmju"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="10_sfd34"]
 [ext_resource type="Script" path="res://boss.gd" id="11_oc7q0"]
-[ext_resource type="PackedScene" path="res://health_bar.tscn" id="12_skt15"]
-[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="12_tcdil"]
-[ext_resource type="PackedScene" path="res://candles.tscn" id="13_db52u"]
+[ext_resource type="PackedScene" uid="uid://c8tpa21vfwywu" path="res://health_bar.tscn" id="12_skt15"]
+[ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="12_tcdil"]
+[ext_resource type="PackedScene" uid="uid://dhxy7gch5cef4" path="res://candles.tscn" id="13_db52u"]
 [ext_resource type="Script" path="res://health_bar.gd" id="13_jexxa"]
-[ext_resource type="PackedScene" path="res://energy_bar.tscn" id="15_ciypt"]
+[ext_resource type="PackedScene" uid="uid://cd76au4dfct8j" path="res://energy_bar.tscn" id="15_ciypt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqhvf"]
 atlas = ExtResource("12_tcdil")
