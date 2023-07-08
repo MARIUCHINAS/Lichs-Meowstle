@@ -1,6 +1,6 @@
 extends Area2D
 
-signal ScareZoneActivated
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,6 +20,4 @@ func _on_body_entered(body):
 	print(body)
 	print(body.name)
 	if body.name == "Enemy":
-		print("sned")
-		emit_signal("ScareZoneActivated")
-		body.scared = true
+		body._on_enter_scare_zone()
