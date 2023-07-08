@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://pny7dv07qjx0"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_5lxyv"]
-[ext_resource type="AudioStream" uid="uid://c4g5dtbrr5kg" path="res://Sounds/GameStart.wav" id="2_vkmfn"]
+[ext_resource type="AudioStream" uid="uid://0qlf14sqbiqx" path="res://Sounds/GameStart.wav" id="2_vkmfn"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_5lxyv")
