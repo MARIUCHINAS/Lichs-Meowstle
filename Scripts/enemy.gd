@@ -34,7 +34,8 @@ func _physics_process(delta):
 				var telepos=i.position
 				velocity=(position-telepos)
 				velocity = velocity.normalized() * speed
-	move_and_collide(velocity)
+	var collision = move_and_collide(velocity)
+	print(collision)
 
 func Indanger(InDanger):
 	if InDanger:
@@ -52,7 +53,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	print("Enemy out of bounds")
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
-	exited = false
+	print("Entered")
 
 func _on_hud_start_game():
 	started = true

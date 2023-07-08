@@ -3,5 +3,4 @@
 [ext_resource type="Script" path="res://area_attack.gd" id="1_qhl0e"]
 
 [node name="Area attack" type="Node2D"]
-position = Vector2(388, 183)
 script = ExtResource("1_qhl0e")
