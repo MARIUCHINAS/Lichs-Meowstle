@@ -46,8 +46,6 @@ func _process(delta):
 
 
 func _on_hud_start_game():
-	$AttackZoneCollisionTimer.start()
-	$SpawnAttackZoneTimer.start()
 	game_started = true
 
 
@@ -57,11 +55,3 @@ func _on_enemy_about_to_die():
 
 func _on_enemy_about_to_not_die():
 	KillEnemy = false
-
-
-func _on_spawn_attack_zone_timer_timeout():
-	pass
-
-
-func _on_attack_zone_collision_timer_timeout():
-	pass

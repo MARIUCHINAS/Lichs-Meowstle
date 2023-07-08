@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://pny7dv07qjx0"]
+[gd_scene load_steps=5 format=3 uid="uid://pny7dv07qjx0"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_5lxyv"]
 [ext_resource type="AudioStream" uid="uid://0qlf14sqbiqx" path="res://Sounds/GameStart.wav" id="2_vkmfn"]
+[ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_mod0a"]
+
+[sub_resource type="FontVariation" id="FontVariation_lgxip"]
+base_font = ExtResource("3_mod0a")
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_5lxyv")
@@ -46,5 +50,22 @@ text = "Start Game"
 
 [node name="PlayButtonAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vkmfn")
+
+[node name="HealthLabel" type="Label" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(1, 0.993738)
+theme_override_fonts/font = SubResource("FontVariation_lgxip")
+text = "Health:      %"
+
+[node name="HealthLabel" type="Label" parent="HealthLabel"]
+offset_left = 51.0
+offset_top = 1.0063
+offset_right = 92.0
+offset_bottom = 24.0063
+scale = Vector2(1, 0.993738)
+theme_override_fonts/font = SubResource("FontVariation_lgxip")
+text = "100"
 
 [connection signal="button_up" from="StartButton" to="." method="_on_button_button_up"]

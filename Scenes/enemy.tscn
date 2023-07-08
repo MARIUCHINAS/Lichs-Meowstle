@@ -29,6 +29,9 @@ scale = Vector2(1.46435, 2.84559)
 [node name="PanicCountdownTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="RehealTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="LookTimer" to="." method="_on_look_timer_timeout"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="RehealTimer" to="." method="_on_reheal_timer_timeout"]

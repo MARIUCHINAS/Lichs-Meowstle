@@ -6,3 +6,7 @@ func _ready():
 func _process(delta):
 	if frame==5:
 		queue_free()
+
+
+func _on_area_2d_body_entered(body):
+	get_node("res://Scenes/hud.tscn").health -= 20
