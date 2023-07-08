@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" path="res://boss.tscn" id="10_sfd34"]
 [ext_resource type="Script" path="res://boss.gd" id="11_oc7q0"]
 [ext_resource type="PackedScene" path="res://health_bar.tscn" id="12_skt15"]
-[ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="12_tcdil"]
+[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="12_tcdil"]
 [ext_resource type="PackedScene" path="res://candles.tscn" id="13_db52u"]
 [ext_resource type="Script" path="res://health_bar.gd" id="13_jexxa"]
 [ext_resource type="PackedScene" path="res://energy_bar.tscn" id="15_ciypt"]
@@ -39,8 +39,8 @@ script = ExtResource("13_jexxa")
 
 [node name="Ground" parent="." instance=ExtResource("8_jpmju")]
 modulate = Color(0.560784, 0.560784, 0.560784, 1)
-position = Vector2(585, 327)
-scale = Vector2(2, 2)
+position = Vector2(609, 364)
+scale = Vector2(3, 3)
 
 [node name="Enemy" parent="." instance=ExtResource("3_voi6q")]
 z_index = 2
@@ -66,7 +66,7 @@ scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_qqhvf")
 
 [node name="candles" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(380, 142)
+position = Vector2(367, 145)
 scale = Vector2(3, 3)
 
 [node name="candles2" parent="." instance=ExtResource("13_db52u")]
@@ -74,27 +74,27 @@ position = Vector2(661, 142)
 scale = Vector2(3, 3)
 
 [node name="candles3" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(81, 291)
+position = Vector2(70, 364)
 scale = Vector2(3, 3)
 
 [node name="candles4" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(78, 507)
+position = Vector2(62, 587)
 scale = Vector2(3, 3)
 
 [node name="candles5" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(945, 280)
+position = Vector2(945, 349)
 scale = Vector2(3, 3)
 
 [node name="candles6" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(942, 508)
+position = Vector2(938, 572)
 scale = Vector2(3, 3)
 
 [node name="candles7" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(650, 804)
+position = Vector2(632, 677)
 scale = Vector2(3, 3)
 
 [node name="candles8" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(392, 798)
+position = Vector2(391, 666)
 scale = Vector2(3, 3)
 
 [node name="energy bar" parent="." instance=ExtResource("15_ciypt")]

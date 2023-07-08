@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bhatxis08d52d"]
 
-[ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="1_8wx0o"]
+[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="1_8wx0o"]
 [ext_resource type="Script" path="res://explosion.gd" id="2_srqne"]
 [ext_resource type="PackedScene" path="res://light.tscn" id="3_r3d46"]
 
@@ -51,7 +51,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 11.99
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4jl30"]
@@ -61,7 +61,7 @@ radius = 13.5093
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_syren")
-frame_progress = 0.619615
+frame_progress = 0.909452
 script = ExtResource("2_srqne")
 
 [node name="Area2D" type="Area2D" parent="."]
