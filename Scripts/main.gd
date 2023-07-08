@@ -5,7 +5,7 @@ var game_started = false
 @export var ScareZoneScene: PackedScene
 @export var BoulderAreaScene: PackedScene
 @export var AttackZoneScene: PackedScene
-var AreaAttack=load("res://area_attack.tscn")
+@export var AreaAttack: PackedScene
 
 var screen_size: Vector2
 
@@ -61,19 +61,7 @@ func _on_enemy_about_to_not_die():
 
 func _on_spawn_attack_zone_timer_timeout():
 	pass
-	#var AttackZoneSpawnLocation = Vector2(screen_size / 2)
-	#AttackZoneArea = AttackZoneScene.instantiate()
-	#get_tree().get_root().add_child(AttackZoneArea)
-	#AttackZoneArea.position = AttackZoneSpawnLocation
-	#emit_signal("BoulderSpawn")
 
 
 func _on_attack_zone_collision_timer_timeout():
 	pass
-	#if KillEnemy:
-	#	$Enemy.queue_free()
-	#else:
-	#	print("Congratz")
-	#	for i in get_tree().get_root().get_children():
-	#		if i.name == "AreaAttackLineMiddle":
-	#			i.queue_free()
