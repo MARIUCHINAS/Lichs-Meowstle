@@ -19,7 +19,7 @@ func _on_self_destruct_timer_timeout():
 func _on_body_entered(body):
 	print(body)
 	print(body.name)
-	if body.name == "Player":
+	if body.name == "Enemy":
 		print("sned")
 		emit_signal("ScareZoneActivated")
 		body.scared = true

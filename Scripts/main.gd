@@ -3,6 +3,7 @@ extends Node
 var game_started = false
 
 @export var ScareZoneScene: PackedScene
+@export var BoulderAreaScene: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +20,15 @@ func _input(event):
 			var ScareZone = ScareZoneScene.instantiate()
 			get_tree().get_root().add_child(ScareZone)
 			ScareZone.position = ScareZoneSpawnLocation
+			
+		if (event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT):
+			var mouse_position = get_viewport().get_mouse_position()
+			var BoulderSpawnLocation = mouse_position
+			var BoulderArea = BoulderAreaScene.instantiate()
+			get_tree().get_root().add_child(BoulderArea)
+			BoulderArea.position = BoulderSpawnLocation
+			$Enemy.position = BoulderArea.position
+			emit_signal("BoulderSpawn")
 			
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
