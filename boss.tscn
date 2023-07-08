@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvtuunrygygx1"]
+
+[ext_resource type="Texture2D" uid="uid://djsrb7wgbg4k5" path="res://16x16template.png" id="1_3n26c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ai1"]
+atlas = ExtResource("1_3n26c")
+region = Rect2(0, 204, 67, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a17ld"]
+atlas = ExtResource("1_3n26c")
+region = Rect2(0, 170, 67, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqj7u"]
+atlas = ExtResource("1_3n26c")
+region = Rect2(0, 238, 67, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gl0v8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ai1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a17ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqj7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a17ld")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Boss" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_gl0v8")
+frame_progress = 0.964185

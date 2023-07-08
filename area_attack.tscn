@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcrw1p8lx36xq"]
+
+[ext_resource type="Script" path="res://area_attack.gd" id="1_qhl0e"]
+
+[node name="Area attack" type="Node2D"]
+position = Vector2(388, 183)
+script = ExtResource("1_qhl0e")

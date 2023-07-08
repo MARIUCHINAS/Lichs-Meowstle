@@ -1,13 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck5kshxk13pmq"]
+[gd_scene load_steps=10 format=3 uid="uid://ck5kshxk13pmq"]
 
 [ext_resource type="Script" path="res://Scripts/scare_zone.gd" id="1_jt706"]
-[ext_resource type="Texture2D" uid="uid://dncpu7ajd8c0n" path="res://icon.svg" id="1_o0x31"]
+[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="2_ljmsg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lw88g"]
+atlas = ExtResource("2_ljmsg")
+region = Rect2(0, 34, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kajww"]
+atlas = ExtResource("2_ljmsg")
+region = Rect2(17, 34, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jrv1"]
+atlas = ExtResource("2_ljmsg")
+region = Rect2(34, 34, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0whp"]
+atlas = ExtResource("2_ljmsg")
+region = Rect2(51, 34, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd5qv"]
+atlas = ExtResource("2_ljmsg")
+region = Rect2(68, 34, 16, 33)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qq3dv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_o0x31")
+"texture": SubResource("AtlasTexture_lw88g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kajww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jrv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0whp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd5qv")
 }],
 "loop": true,
 "name": &"default",
@@ -21,21 +53,14 @@ size = Vector2(47, 46)
 script = ExtResource("1_jt706")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
+texture_filter = 1
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_qq3dv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_xmlho")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -42.0
-offset_top = -55.0
-offset_right = 43.0
-offset_bottom = -29.0
-text = "Scare Zone"
-horizontal_alignment = 1
 
 [node name="SelfDestructTimer" type="Timer" parent="."]
 wait_time = 0.6

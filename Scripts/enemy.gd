@@ -19,6 +19,7 @@ var speed
 @onready var stats = $Stat
 
 func _ready():
+	$cat.play()
 	randomize()
 	speed = base_speed
 func _enter_tree():
