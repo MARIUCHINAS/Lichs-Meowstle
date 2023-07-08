@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://t3k1pltixtqw"]
+[gd_scene load_steps=6 format=3 uid="uid://34p061g1rk16"]
 
-[ext_resource type="PackedScene" uid="uid://cekymkak0jkb5" path="res://cat.tscn" id="1_ifs40"]
+[ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_ifs40"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="2_1ivfc"]
 
 [sub_resource type="Animation" id="Animation_yhg2o"]

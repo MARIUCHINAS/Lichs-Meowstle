@@ -28,3 +28,12 @@ func _on_button_button_up():
 	hide_stuff()
 	show_stuff()
 	emit_signal("start_game")
+
+
+func _on_credits_button_button_up():
+	$CreditsColorRect.show()
+	$CreditsColorRect/AnimationPlayer.current_animation = "Main"
+
+
+func _on_back_from_credits_button_button_up():
+	$CreditsColorRect.hide()
