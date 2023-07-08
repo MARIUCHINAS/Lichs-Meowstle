@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://l8dsu225s5tt"]
+[gd_scene load_steps=19 format=3 uid="uid://l8dsu225s5tt"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_a7alu"]
 [ext_resource type="PackedScene" uid="uid://pny7dv07qjx0" path="res://Scenes/hud.tscn" id="1_qt6np"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://health_bar.gd" id="13_jexxa"]
 [ext_resource type="PackedScene" path="res://energy_bar.tscn" id="15_ciypt"]
 [ext_resource type="Script" path="res://energy_bar.gd" id="16_n51sj"]
+[ext_resource type="PackedScene" uid="uid://pigfpjx3spm7" path="res://boulder.tscn" id="16_pbngs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqhvf"]
 atlas = ExtResource("12_tcdil")
@@ -65,38 +66,6 @@ position = Vector2(513, 145)
 scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_qqhvf")
 
-[node name="candles" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(367, 145)
-scale = Vector2(3, 3)
-
-[node name="candles2" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(661, 142)
-scale = Vector2(3, 3)
-
-[node name="candles3" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(70, 364)
-scale = Vector2(3, 3)
-
-[node name="candles4" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(62, 587)
-scale = Vector2(3, 3)
-
-[node name="candles5" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(945, 349)
-scale = Vector2(3, 3)
-
-[node name="candles6" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(938, 572)
-scale = Vector2(3, 3)
-
-[node name="candles7" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(632, 677)
-scale = Vector2(3, 3)
-
-[node name="candles8" parent="." instance=ExtResource("13_db52u")]
-position = Vector2(391, 666)
-scale = Vector2(3, 3)
-
 [node name="energy bar" parent="." instance=ExtResource("15_ciypt")]
 offset_left = 941.0
 offset_top = 12.0
@@ -107,6 +76,66 @@ script = ExtResource("16_n51sj")
 
 [node name="Attack Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="boulder container" type="Node" parent="."]
+
+[node name="boulder" parent="boulder container" instance=ExtResource("16_pbngs")]
+position = Vector2(225, 332)
+scale = Vector2(4, 4)
+
+[node name="boulder2" parent="boulder container" instance=ExtResource("16_pbngs")]
+position = Vector2(843, 679)
+scale = Vector2(4, 4)
+
+[node name="boulder3" parent="boulder container" instance=ExtResource("16_pbngs")]
+position = Vector2(655, 389)
+scale = Vector2(4, 4)
+
+[node name="boulder4" parent="boulder container" instance=ExtResource("16_pbngs")]
+position = Vector2(185, 876)
+scale = Vector2(4, 4)
+
+[node name="boulder5" parent="boulder container" instance=ExtResource("16_pbngs")]
+position = Vector2(505, 656)
+scale = Vector2(4, 4)
+
+[node name="boulder6" parent="boulder container" instance=ExtResource("16_pbngs")]
+position = Vector2(808, 927)
+scale = Vector2(4, 4)
+
+[node name="candle container" type="Node" parent="."]
+
+[node name="candles" parent="candle container" instance=ExtResource("13_db52u")]
+position = Vector2(367, 145)
+scale = Vector2(3, 3)
+
+[node name="candles2" parent="candle container" instance=ExtResource("13_db52u")]
+position = Vector2(661, 142)
+scale = Vector2(3, 3)
+
+[node name="candles3" parent="candle container" instance=ExtResource("13_db52u")]
+position = Vector2(70, 364)
+scale = Vector2(3, 3)
+
+[node name="candles4" parent="candle container" instance=ExtResource("13_db52u")]
+position = Vector2(62, 587)
+scale = Vector2(3, 3)
+
+[node name="candles5" parent="candle container" instance=ExtResource("13_db52u")]
+position = Vector2(945, 349)
+scale = Vector2(3, 3)
+
+[node name="candles6" parent="candle container" instance=ExtResource("13_db52u")]
+position = Vector2(938, 572)
+scale = Vector2(3, 3)
+
+[node name="candles7" parent="candle container" instance=ExtResource("13_db52u")]
+position = Vector2(632, 677)
+scale = Vector2(3, 3)
+
+[node name="candles8" parent="candle container" instance=ExtResource("13_db52u")]
+position = Vector2(391, 666)
+scale = Vector2(3, 3)
 
 [connection signal="AboutToDie" from="Enemy" to="." method="_on_enemy_about_to_die"]
 [connection signal="AboutToNotDie" from="Enemy" to="." method="_on_enemy_about_to_not_die"]

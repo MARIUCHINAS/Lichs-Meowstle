@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://pigfpjx3spm7"]
+
+[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="1_cuc1p"]
+[ext_resource type="PackedScene" path="res://light.tscn" id="2_c3ld3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2xrx"]
+atlas = ExtResource("1_cuc1p")
+region = Rect2(34, 68, 34, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sa5ab"]
+size = Vector2(26, 29)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j5eia"]
+blend_mode = 2
+
+[node name="boulder" type="Sprite2D"]
+z_index = 1
+texture_filter = 1
+texture = SubResource("AtlasTexture_f2xrx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_sa5ab")
+
+[node name="light" parent="." instance=ExtResource("2_c3ld3")]
+modulate = Color(0.309804, 0.309804, 0.309804, 1)
+material = SubResource("CanvasItemMaterial_j5eia")
+position = Vector2(-3, 15)
+scale = Vector2(-0.775723, -0.205331)

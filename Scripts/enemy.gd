@@ -22,6 +22,8 @@ func _ready():
 	$cat.play()
 	randomize()
 	speed = base_speed
+	randomdir()
+	
 func _enter_tree():
 	pass
 
@@ -36,6 +38,9 @@ func _physics_process(delta):
 				velocity=(position-telepos)
 				velocity = velocity.normalized() * speed
 	var collision = move_and_collide(velocity)
+	if collision:
+		velocity*=-1
+	#move_and_slide()
 	#print(collision)
 
 func Indanger(InDanger):
@@ -61,6 +66,7 @@ func randomdir():
 	var target=Vector2(randf_range(100,1200),randf_range(100,600))#range of posible target positions
 	velocity=(target-position)
 	velocity=velocity.normalized()*speed
+	#print(velocity)
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	print("Enemy out of bounds")

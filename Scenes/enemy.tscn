@@ -16,7 +16,7 @@ animation = &"walking left"
 frame_progress = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.32, 2.56)
+scale = Vector2(1.31412, 2.56)
 shape = SubResource("RectangleShape2D_tfky6")
 
 [node name="LookTimer" type="Timer" parent="."]
