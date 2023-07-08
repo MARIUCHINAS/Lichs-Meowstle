@@ -1,45 +1,45 @@
 [gd_scene load_steps=10 format=3 uid="uid://ck5kshxk13pmq"]
 
 [ext_resource type="Script" path="res://Scripts/scare_zone.gd" id="1_jt706"]
-[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="2_dx2dt"]
+[ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="2_ljmsg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_abuhn"]
-atlas = ExtResource("2_dx2dt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivnxa"]
+atlas = ExtResource("2_ljmsg")
 region = Rect2(0, 34, 16, 33)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s6jwi"]
-atlas = ExtResource("2_dx2dt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac4q4"]
+atlas = ExtResource("2_ljmsg")
 region = Rect2(17, 34, 16, 33)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_odj58"]
-atlas = ExtResource("2_dx2dt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_v04wt"]
+atlas = ExtResource("2_ljmsg")
 region = Rect2(34, 34, 16, 33)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lr8b4"]
-atlas = ExtResource("2_dx2dt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_85q68"]
+atlas = ExtResource("2_ljmsg")
 region = Rect2(51, 34, 16, 33)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_arbop"]
-atlas = ExtResource("2_dx2dt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_o453k"]
+atlas = ExtResource("2_ljmsg")
 region = Rect2(68, 34, 16, 33)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qq3dv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_abuhn")
+"texture": SubResource("AtlasTexture_ivnxa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s6jwi")
+"texture": SubResource("AtlasTexture_ac4q4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_odj58")
+"texture": SubResource("AtlasTexture_v04wt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lr8b4")
+"texture": SubResource("AtlasTexture_85q68")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_arbop")
+"texture": SubResource("AtlasTexture_o453k")
 }],
 "loop": true,
 "name": &"default",
