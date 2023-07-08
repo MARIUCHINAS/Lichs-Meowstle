@@ -8,12 +8,17 @@ var started = false
 
 var scared = false
 
+var screen_size = Vector2.ZERO
+
 @export var speed = 4
 
 @onready var stats = $Stat
 
 func _ready():
 	randomize()
+	screen_size = get_viewport_rect().size
+	print(screen_size)
+	
 	
 func _enter_tree():
 	pass
