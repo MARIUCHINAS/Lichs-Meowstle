@@ -32,7 +32,7 @@ func _physics_process(delta):
 			if i.name == "ScareZone":
 				var telepos=i.position
 				velocity=(position-telepos)
-				velocity = velocity.normalized() * speed * delta
+				velocity = velocity.normalized() * speed
 	move_and_collide(velocity)
 
 func Indanger(InDanger):

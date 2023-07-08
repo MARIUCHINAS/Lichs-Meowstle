@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://l8dsu225s5tt"]
+[gd_scene load_steps=9 format=3 uid="uid://l8dsu225s5tt"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_a7alu"]
 [ext_resource type="PackedScene" uid="uid://pny7dv07qjx0" path="res://Scenes/hud.tscn" id="1_qt6np"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://l7ncvmtsiowf" path="res://Scenes/boulder.tscn" id="3_qruod"]
 [ext_resource type="PackedScene" uid="uid://g7fyi7uu3mgx" path="res://Scenes/enemy.tscn" id="3_voi6q"]
 [ext_resource type="PackedScene" uid="uid://cle5aa4pt7ii3" path="res://Scenes/area_attack_line_middle.tscn" id="4_bgtmm"]
+[ext_resource type="PackedScene" uid="uid://npnisnjvohj" path="res://ground.tscn" id="8_jpmju"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_a7alu")
@@ -28,6 +29,9 @@ wait_time = 5.0
 
 [node name="AttackZoneCollisionTimer" type="Timer" parent="."]
 wait_time = 4.0
+
+[node name="Ground" parent="." instance=ExtResource("8_jpmju")]
+position = Vector2(576, 324)
 
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
 [connection signal="start_game" from="HUD" to="Enemy" method="_on_hud_start_game"]
