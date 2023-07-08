@@ -31,6 +31,7 @@ func _on_button_button_up():
 
 
 func _on_credits_button_button_up():
+	$PlayButtonAudioStreamPlayer.play()
 	$CreditsColorRect.show()
 	$CreditsColorRect/AnimationPlayer.current_animation = "Main"
 
