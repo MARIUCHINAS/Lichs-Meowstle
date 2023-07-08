@@ -9,4 +9,4 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	get_node("res://Scenes/hud.tscn").health -= 20
+	get_tree().get_root().get_node("Main").get_node("HUD").health -= 20

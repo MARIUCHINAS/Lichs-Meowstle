@@ -10,7 +10,8 @@ func _ready():
 	
 func _process(delta):
 	$HealthLabel/HealthLabel.text = str(health)
-	pass
+	if health <= 0:
+		print("You lost. But the end screen still does not exist")
 	
 	
 func hide_stuff():
@@ -25,4 +26,5 @@ func show_stuff():
 func _on_button_button_up():
 	$PlayButtonAudioStreamPlayer.play()
 	hide_stuff()
+	show_stuff()
 	emit_signal("start_game")

@@ -68,8 +68,10 @@ func _on_enter_scare_zone():
 
 
 func _on_reheal_timer_timeout():
-	#
-	#if get_node("res://Scenes/hud.tscn").health >= 100:
-	#	print("baba")
-	#else:
-	#	get_node("res://Scenes/hud.tscn").health += 1
+	
+	if get_tree().get_root().get_node("Main").get_node("HUD").health >= 100:
+		print("baba")
+	else:
+		get_tree().get_root().get_node("Main").get_node("HUD").health += 1
+		
+	get_tree().get_root().get_node("Main").get_node("HUD").health

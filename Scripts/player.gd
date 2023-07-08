@@ -1,9 +1,5 @@
 extends Area2D
 
-signal BoulderSpawn
-
-var Boulder = preload("res://Scenes/boulder.tscn")
-
 func _ready():
 	pass
 
