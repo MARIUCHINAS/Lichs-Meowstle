@@ -14,7 +14,7 @@ signal AboutToNotDie
 # speed is sometimes chaged during runtime, so base speed sets the default
 var speed
 
-@export var base_speed = 4
+@export var base_speed = 3
 
 @onready var stats = $Stat
 
