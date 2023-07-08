@@ -44,8 +44,7 @@ scale = Vector2(3, 3)
 
 [node name="Stat" parent="." instance=ExtResource("3_uliyg")]
 
-[node name="PanicCountdown" type="Timer" parent="."]
-wait_time = 2.0
+[node name="PanicCountdownTimer" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="timeout" from="LookTimer" to="." method="_on_look_timer_timeout"]
