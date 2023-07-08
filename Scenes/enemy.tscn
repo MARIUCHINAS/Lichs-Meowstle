@@ -44,6 +44,10 @@ scale = Vector2(3, 3)
 
 [node name="Stat" parent="." instance=ExtResource("3_uliyg")]
 
+[node name="PanicCountdown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="timeout" from="LookTimer" to="." method="_on_look_timer_timeout"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -17,7 +17,7 @@ func _on_self_destruct_timer_timeout():
 
 
 func _on_body_entered(body):
-	print(body)
-	print(body.name)
+#	print(body)
+#	print(body.name)
 	if body.name == "Enemy":
 		body._on_enter_scare_zone()
