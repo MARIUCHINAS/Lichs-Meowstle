@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmd7hii5lk861"]
+[gd_scene load_steps=6 format=3 uid="uid://g7fyi7uu3mgx"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_7kh15"]
-[ext_resource type="Texture2D" uid="uid://dncpu7ajd8c0n" path="res://icon.svg" id="1_ac5kq"]
-[ext_resource type="PackedScene" uid="uid://cname5jyvgqpl" path="res://Scenes/stat.tscn" id="3_06ab5"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_h04w8"]
+[ext_resource type="Texture2D" uid="uid://dncpu7ajd8c0n" path="res://icon.svg" id="1_w3n7q"]
+[ext_resource type="PackedScene" path="res://Scenes/stat.tscn" id="3_uliyg"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_an3fg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1v7ti"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ac5kq")
+"texture": ExtResource("1_w3n7q")
 }],
 "loop": true,
 "name": &"default",
@@ -20,7 +20,11 @@ script = ExtResource("1_7kh15")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_an3fg")
+sprite_frames = SubResource("SpriteFrames_1v7ti")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.12, 3.16)
+shape = SubResource("RectangleShape2D_tfky6")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -25.0
@@ -28,5 +32,16 @@ offset_top = -54.0
 offset_right = 24.0
 offset_bottom = -28.0
 text = "Player"
+metadata/_edit_use_anchors_ = true
 
-[node name="Stat" parent="." instance=ExtResource("3_06ab5")]
+[node name="LookTimer" type="Timer" parent="."]
+wait_time = 1.7
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(3, 3)
+
+[node name="Stat" parent="." instance=ExtResource("3_uliyg")]
+
+[connection signal="timeout" from="LookTimer" to="." method="_on_look_timer_timeout"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
