@@ -15,7 +15,7 @@ func _process(delta):
 func _on_area_entered(area):
 	print(area)
 	print(area.name)
-	if area.name == "enemy":
+	if area.name == "Player":
 		print("sned")
 		emit_signal("ScareZoneActivated")
 
@@ -27,7 +27,7 @@ func _on_self_destruct_timer_timeout():
 func _on_body_entered(body):
 	print(body)
 	print(body.name)
-	if body.name == "Enemy":
+	if body.name == "Player":
 		print("sned")
 		emit_signal("ScareZoneActivated")
 		body.scared = true

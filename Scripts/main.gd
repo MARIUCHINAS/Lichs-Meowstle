@@ -9,7 +9,7 @@ func _ready():
 	pass # Replace with function body.
 	
 func _enter_tree():
-	$Enemy.position = $EnemyStartPositionMarker2D.position
+	$Player.position = $PlayerStartPositionMarker2D.position
 
 func _input(event):
 	if game_started:

@@ -12,13 +12,13 @@ ScareZoneScene = ExtResource("2_rb0fe")
 
 [node name="HUD" parent="." instance=ExtResource("1_qt6np")]
 
-[node name="Player" parent="." instance=ExtResource("2_0ge8o")]
+[node name="Boss" parent="." instance=ExtResource("2_0ge8o")]
 
-[node name="Enemy" parent="." instance=ExtResource("3_voi6q")]
+[node name="Player" parent="." instance=ExtResource("3_voi6q")]
 
-[node name="EnemyStartPositionMarker2D" type="Marker2D" parent="."]
+[node name="PlayerStartPositionMarker2D" type="Marker2D" parent="."]
 position = Vector2(1068, 324)
 
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
-[connection signal="start_game" from="HUD" to="Enemy" method="_on_hud_start_game"]
-[connection signal="BoulderSpawn" from="Player" to="Enemy" method="_on_player_boulder_spawn"]
+[connection signal="start_game" from="HUD" to="Player" method="_on_hud_start_game"]
+[connection signal="BoulderSpawn" from="Boss" to="Player" method="_on_player_boulder_spawn"]
