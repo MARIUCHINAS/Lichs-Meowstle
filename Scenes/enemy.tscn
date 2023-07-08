@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://g7fyi7uu3mgx"]
+[gd_scene load_steps=6 format=3 uid="uid://g7fyi7uu3mgx"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_h04w8"]
 [ext_resource type="Texture2D" uid="uid://dncpu7ajd8c0n" path="res://icon.svg" id="1_w3n7q"]
+[ext_resource type="PackedScene" uid="uid://cname5jyvgqpl" path="res://Scenes/stat.tscn" id="3_uliyg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1v7ti"]
 animations = [{
@@ -40,6 +41,8 @@ wait_time = 1.7
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(3, 3)
+
+[node name="Stat" parent="." instance=ExtResource("3_uliyg")]
 
 [connection signal="timeout" from="LookTimer" to="." method="_on_look_timer_timeout"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

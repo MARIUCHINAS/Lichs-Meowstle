@@ -19,6 +19,7 @@ func _input(event):
 			var ScareZone = ScareZoneScene.instantiate()
 			get_tree().get_root().add_child(ScareZone)
 			ScareZone.position = ScareZoneSpawnLocation
+			
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
