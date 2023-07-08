@@ -23,4 +23,3 @@ position = Vector2(1068, 324)
 
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
 [connection signal="start_game" from="HUD" to="Player" method="_on_hud_start_game"]
-[connection signal="BoulderSpawn" from="Boss" to="Player" method="_on_player_boulder_spawn"]
