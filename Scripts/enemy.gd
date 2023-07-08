@@ -34,16 +34,16 @@ func _physics_process(delta):
 	speed = base_speed * $PanicCountdown.time_left/$PanicCountdown.wait_time  * panic_multiplier + 1
 	
 	if started:
-		var velocity = Vector2(speed, 0).rotated((global_rotation))
-		move_and_collide(velocity)
+		var velocity = Vector2(speed, 0).rotated((global_rotation)) # Determanes velocity
+		move_and_collide(velocity) # Moves and collides using that velocity
 		if scared:
-			rotate(3.141593)
+			rotate(3.141593) # Rotates 3.141593 Radians or 180 degrees
 			scared = false
 	
 
 func _on_look_timer_timeout():
 	random_direction = randf_range(0, 360)
-	rotation_degrees = random_direction
+	rotation_degrees = random_direction # Sets the rotation to a random number
 	print(random_direction)
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
