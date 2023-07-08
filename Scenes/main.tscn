@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://l8dsu225s5tt"]
+[gd_scene load_steps=18 format=3 uid="uid://l8dsu225s5tt"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_a7alu"]
 [ext_resource type="PackedScene" uid="uid://pny7dv07qjx0" path="res://Scenes/hud.tscn" id="1_qt6np"]
@@ -14,7 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="12_tcdil"]
 [ext_resource type="PackedScene" uid="uid://dhxy7gch5cef4" path="res://candles.tscn" id="13_db52u"]
 [ext_resource type="Script" path="res://health_bar.gd" id="13_jexxa"]
-[ext_resource type="PackedScene" uid="uid://cd76au4dfct8j" path="res://energy_bar.tscn" id="15_ciypt"]
+[ext_resource type="PackedScene" path="res://energy_bar.tscn" id="15_ciypt"]
+[ext_resource type="Script" path="res://energy_bar.gd" id="16_n51sj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqhvf"]
 atlas = ExtResource("12_tcdil")
@@ -42,6 +43,7 @@ position = Vector2(585, 327)
 scale = Vector2(2, 2)
 
 [node name="Enemy" parent="." instance=ExtResource("3_voi6q")]
+z_index = 2
 position = Vector2(283, 313)
 
 [node name="EnemyStartPositionMarker2D" type="Marker2D" parent="."]
@@ -101,6 +103,7 @@ offset_top = 12.0
 offset_right = 951.0
 offset_bottom = 75.0
 scale = Vector2(4, 4)
+script = ExtResource("16_n51sj")
 
 [node name="Attack Timer" type="Timer" parent="."]
 one_shot = true

@@ -2,6 +2,7 @@ extends Node
 
 var game_started = false
 var health = 100
+var energy=0
 
 @export var ScareZoneScene: PackedScene
 @export var BoulderAreaScene: PackedScene
@@ -61,3 +62,4 @@ func _on_attack_timer_timeout():
 	var curr = AreaAttack.instantiate()
 	get_tree().get_root().add_child(curr)
 	curr.position = attack_pos
+	curr.fire()

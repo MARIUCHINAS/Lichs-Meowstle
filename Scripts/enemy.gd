@@ -28,6 +28,8 @@ func _enter_tree():
 	
 func _physics_process(delta):
 	# Check for scare zones and run away from them
+	if out_of_bound():
+		randomdir()
 	for i in get_tree().get_root().get_children():
 			if i.name == "ScareZone":
 				var telepos=i.position
@@ -44,6 +46,18 @@ func Indanger(InDanger):
 		
 
 func _on_look_timer_timeout():
+	randomdir()
+	
+func out_of_bound():
+	var w=ProjectSettings.get_setting("display/window/size/viewport_width")
+	var h=ProjectSettings.get_setting("display/window/size/viewport_height")
+	if position.y>h*.9 or position.y<h*.1:
+		return true
+	elif position.x>w*.9 or position.x<w*.1:
+		return true
+	else: return false
+	
+func randomdir():
 	var target=Vector2(randf_range(100,1200),randf_range(100,600))#range of posible target positions
 	velocity=(target-position)
 	velocity=velocity.normalized()*speed
