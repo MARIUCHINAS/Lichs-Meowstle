@@ -2,16 +2,15 @@ extends CanvasLayer
 
 signal start_game
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	pass
+	
+	
 func _process(delta):
 	pass
 
 func hide_stuff():
+	# This hides every HUD element execpt $PlayButtonAudioStreamPlayer
 	for i in get_children():
 		if i != $PlayButtonAudioStreamPlayer:
 			i.hide()
