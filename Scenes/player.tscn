@@ -16,7 +16,11 @@ animations = [{
 }]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [node name="Boss" type="Area2D"]
+=======
+[node name="Player" type="Area2D"]
+>>>>>>> parent of 58dfa82 (Finished name change)
 =======
 [node name="Player" type="Area2D"]
 >>>>>>> parent of 58dfa82 (Finished name change)
