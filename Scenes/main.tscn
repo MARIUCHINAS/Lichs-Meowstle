@@ -2,9 +2,12 @@
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_a7alu"]
 [ext_resource type="PackedScene" uid="uid://pny7dv07qjx0" path="res://Scenes/hud.tscn" id="1_qt6np"]
-[ext_resource type="PackedScene" uid="uid://bmd7hii5lk861" path="res://Scenes/boss.tscn" id="2_0ge8o"]
+[ext_resource type="PackedScene" uid="uid://bmd7hii5lk861" path="res://Scenes/player.tscn" id="2_0ge8o"]
 [ext_resource type="PackedScene" uid="uid://ck5kshxk13pmq" path="res://Scenes/scare_zone.tscn" id="2_rb0fe"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://l7ncvmtsiowf" path="res://Scenes/boulder.tscn" id="3_qruod"]
+=======
+>>>>>>> parent of 58dfa82 (Finished name change)
 [ext_resource type="PackedScene" uid="uid://g7fyi7uu3mgx" path="res://Scenes/enemy.tscn" id="3_voi6q"]
 
 [node name="Main" type="Node"]

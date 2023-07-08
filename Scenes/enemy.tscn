@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 [gd_scene load_steps=6 format=3 uid="uid://qwl6mfdodiod"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_h04w8"]
 [ext_resource type="Texture2D" uid="uid://dncpu7ajd8c0n" path="res://icon.svg" id="1_w3n7q"]
 [ext_resource type="PackedScene" uid="uid://cname5jyvgqpl" path="res://Scenes/stat.tscn" id="3_uliyg"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://g7fyi7uu3mgx"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_h04w8"]
+[ext_resource type="Texture2D" uid="uid://dncpu7ajd8c0n" path="res://icon.svg" id="1_w3n7q"]
+[ext_resource type="PackedScene" path="res://Scenes/stat.tscn" id="3_uliyg"]
+>>>>>>> parent of 58dfa82 (Finished name change)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1v7ti"]
 animations = [{
