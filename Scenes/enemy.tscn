@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://g7fyi7uu3mgx"]
+[gd_scene load_steps=8 format=3 uid="uid://g7fyi7uu3mgx"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_h04w8"]
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="3_8mrqr"]
+[ext_resource type="PackedScene" path="res://light.tscn" id="3_ich5v"]
 [ext_resource type="PackedScene" uid="uid://cname5jyvgqpl" path="res://Scenes/stat.tscn" id="3_uliyg"]
 [ext_resource type="AudioStream" uid="uid://n2aadm1ncppe" path="res://Sounds/Meeh.wav" id="4_8yakk"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0qxs2"]
+blend_mode = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfky6"]
 
@@ -11,9 +15,17 @@
 script = ExtResource("1_h04w8")
 
 [node name="cat" parent="." instance=ExtResource("3_8mrqr")]
+z_index = 1
 scale = Vector2(3, 3)
 animation = &"walking left"
 frame_progress = 0.0
+
+[node name="light" parent="cat" instance=ExtResource("3_ich5v")]
+modulate = Color(1, 1, 1, 0.2)
+z_index = -1
+material = SubResource("CanvasItemMaterial_0qxs2")
+position = Vector2(0.666667, 14.6667)
+scale = Vector2(0.394477, 0.181146)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.31412, 2.56)
