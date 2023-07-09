@@ -5,7 +5,7 @@ signal start_game
 var health = 100
 
 func _ready():
-	$MusicIdleAudioStreamPlayer2D.play()
+	pass
 	
 	
 func _process(delta):
@@ -27,8 +27,6 @@ func show_stuff():
 
 func _on_button_button_up():
 	$PlayButtonAudioStreamPlayer.play()
-	$MusicIdleAudioStreamPlayer2D.stop()
-	$MusicActionAudioStreamPlayer2D.play()
 	hide_stuff()
 	emit_signal("start_game")
 
