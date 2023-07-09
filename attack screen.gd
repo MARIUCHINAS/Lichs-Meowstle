@@ -19,7 +19,6 @@ func _process(delta):
 	pass
 
 func create_screen(matrix):
-	print("jhh")
 	for i in get_children():
 		i.queue_free()
 	for x in range(matrix_size):
@@ -27,7 +26,7 @@ func create_screen(matrix):
 			var curr=ColorRect.new()
 			curr.position=Vector2(x,y)*spacing
 			curr.size=Vector2(1,1)*spacing
-			if matrix[x][y]==1:
+			if matrix[y][x]==1:
 				curr.color=Color8(255,255,255,255)
 			else:
 				curr.color=Color8(0,0,0,255)
