@@ -1,10 +1,24 @@
 [gd_scene load_steps=10 format=3 uid="uid://87fi3q6d1dr4"]
 
-[ext_resource type="Script" path="res://Scripts/cutscene.gd" id="1_uoha4"]
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_x2lj7"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="2_u1k5g"]
 [ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_ivq0h"]
 [ext_resource type="AudioStream" uid="uid://ci6gx4tlc80uy" path="res://Sounds/Woosh.wav" id="4_i8rly"]
+
+[sub_resource type="GDScript" id="GDScript_sjvrd"]
+script/source = "extends Node
+var finished=false
+
+func _ready():play()
+func play():
+	$AnimationPlayer.current_animation = \"Cutscene\"
+	$AnimationPlayer.play(\"Cutscene\")
+
+
+func _on_animation_player_animation_finished(anim_name):
+	print(\"JJJ\")
+	finished=true
+"
 
 [sub_resource type="FontVariation" id="FontVariation_eqo6w"]
 base_font = ExtResource("3_ivq0h")
@@ -143,7 +157,7 @@ _data = {
 }
 
 [node name="Cat_Bored_Cut_Scene" type="Node"]
-script = ExtResource("1_uoha4")
+script = SubResource("GDScript_sjvrd")
 
 [node name="cat" parent="." instance=ExtResource("1_x2lj7")]
 modulate = Color(1, 1, 1, 0)
@@ -161,7 +175,6 @@ frame_progress = 0.59742
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 998.0
@@ -169,7 +182,6 @@ offset_bottom = 439.0
 size_flags_horizontal = 4
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -225,7 +237,6 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 438.0

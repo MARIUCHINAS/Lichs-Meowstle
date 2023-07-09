@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd76au4dfct8j"]
+[gd_scene load_steps=6 format=3 uid="uid://bprgsiq1u73lb"]
 
-[ext_resource type="Texture2D" uid="uid://djsrb7wgbg4k5" path="res://16x16template.png" id="1_anebi"]
+[ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="1_anebi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pbnn"]
 bg_color = Color(0, 0, 0, 1)

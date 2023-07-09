@@ -1,13 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://drmbbwyomoqxq"]
+[gd_scene load_steps=9 format=3 uid="uid://dytfrofb2d10r"]
 
-[ext_resource type="Script" path="res://Scripts/cutscene.gd" id="1_avo0i"]
-[ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_beni4"]
-[ext_resource type="PackedScene" path="res://boss.tscn" id="2_xh13r"]
-[ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_5kjq5"]
-[ext_resource type="AudioStream" uid="uid://ci6gx4tlc80uy" path="res://Sounds/Woosh.wav" id="4_tpa34"]
+[ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_0kbrx"]
+[ext_resource type="PackedScene" path="res://boss.tscn" id="2_kr81p"]
+[ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_0d1kb"]
+[ext_resource type="AudioStream" uid="uid://ci6gx4tlc80uy" path="res://Sounds/Woosh.wav" id="4_tbup5"]
 
-[sub_resource type="FontVariation" id="FontVariation_nu6b8"]
-base_font = ExtResource("3_5kjq5")
+[sub_resource type="FontVariation" id="FontVariation_6p7tl"]
+base_font = ExtResource("3_0d1kb")
 
 [sub_resource type="Animation" id="Animation_sers1"]
 resource_name = "Cutscene"
@@ -58,7 +57,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.5, 4.8),
 "transitions": PackedFloat32Array(3.03143, 1, 1),
 "update": 1,
-"values": ["", "I believe... I belive... I don't believe. I don't believe! Take me back! Mrreow!", "Oh I was supposed to keep you excited not kill you... I failed."]
+"values": ["", "I am very mappy and exicted.", "I was supposed to keep you excited... I succeded"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -142,18 +141,16 @@ _data = {
 "RESET": SubResource("Animation_s4hxj")
 }
 
-[node name="CatDiesCutScene" type="Node"]
-script = ExtResource("1_avo0i")
+[node name="Cat_Excited_Cut_Scene" type="Node"]
 
-[node name="cat" parent="." instance=ExtResource("1_beni4")]
+[node name="cat" parent="." instance=ExtResource("1_0kbrx")]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1132, 702)
-rotation = 1.5708
 scale = Vector2(16, 16)
 animation = &"still standing"
 frame_progress = 0.0
 
-[node name="Boss" parent="." instance=ExtResource("2_xh13r")]
+[node name="Boss" parent="." instance=ExtResource("2_kr81p")]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-534, 728)
 scale = Vector2(16, 16)
@@ -162,6 +159,7 @@ frame_progress = 0.59742
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 998.0
@@ -169,6 +167,7 @@ offset_bottom = 439.0
 size_flags_horizontal = 4
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -200,8 +199,9 @@ offset_left = 5.0
 offset_top = 373.0
 offset_right = 433.0
 offset_bottom = 430.0
-theme_override_fonts/font = SubResource("FontVariation_nu6b8")
+theme_override_fonts/font = SubResource("FontVariation_6p7tl")
 theme_override_font_sizes/font_size = 53
+text = "Boss (You)"
 autowrap_mode = 1
 
 [node name="DialogLabel" type="Label" parent="CanvasLayer/Control"]
@@ -211,8 +211,9 @@ offset_left = 8.0
 offset_top = 86.0
 offset_right = 988.0
 offset_bottom = 200.0
-theme_override_fonts/font = SubResource("FontVariation_nu6b8")
+theme_override_fonts/font = SubResource("FontVariation_6p7tl")
 theme_override_font_sizes/font_size = 53
+text = "I was supposed to keep you excited... I succeded"
 autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -222,6 +223,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 438.0
@@ -229,10 +231,8 @@ grow_horizontal = 2
 color = Color(0.0823529, 0, 0.0117647, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_tpa34")
+stream = ExtResource("4_tbup5")
 volume_db = 8.758
 pitch_scale = 0.71
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="cat"]
