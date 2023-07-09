@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/cutscene.gd" id="1_a8t80"]
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_ifs40"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="2_1ivfc"]
-[ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_sgscb"]
-[ext_resource type="AudioStream" uid="uid://ci6gx4tlc80uy" path="res://Sounds/Woosh.wav" id="5_blkk6"]
+[ext_resource type="FontFile" uid="uid://ddeyhm8o00i0i" path="res://Fonts/Pixellari.ttf" id="3_sgscb"]
+[ext_resource type="AudioStream" uid="uid://xtb7mjwejqgu" path="res://Sounds/Woosh.wav" id="5_blkk6"]
 
 [sub_resource type="FontVariation" id="FontVariation_8e0lo"]
 base_font = ExtResource("3_sgscb")
@@ -142,19 +142,20 @@ _data = {
 "RESET": SubResource("Animation_s4hxj")
 }
 
-[node name="Cutscene" type="Node"]
+[node name="Cutscene" type="Node2D"]
+z_index = 13
 script = ExtResource("1_a8t80")
 
 [node name="cat" parent="." instance=ExtResource("1_ifs40")]
-modulate = Color(1, 1, 1, 0.348837)
-position = Vector2(500, 702)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1132, 702)
 scale = Vector2(16, 16)
 animation = &"still standing"
 frame_progress = 0.0
 
 [node name="Boss" parent="." instance=ExtResource("2_1ivfc")]
-modulate = Color(1, 1, 1, 0.861539)
-position = Vector2(500, 728)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-534, 728)
 scale = Vector2(16, 16)
 frame_progress = 0.59742
 
@@ -201,7 +202,6 @@ offset_right = 433.0
 offset_bottom = 430.0
 theme_override_fonts/font = SubResource("FontVariation_8e0lo")
 theme_override_font_sizes/font_size = 53
-text = "Boss(You)"
 
 [node name="DialogLabel" type="Label" parent="CanvasLayer/Control"]
 texture_filter = 1
@@ -212,7 +212,6 @@ offset_right = 436.0
 offset_bottom = 143.0
 theme_override_fonts/font = SubResource("FontVariation_8e0lo")
 theme_override_font_sizes/font_size = 53
-text = "Ka-boom! Hehehehehe. Got-cha"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
