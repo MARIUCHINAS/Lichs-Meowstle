@@ -58,7 +58,8 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.5, 4.8),
 "transitions": PackedFloat32Array(3.03143, 1, 1),
 "update": 1,
-"values": ["", "I am very mappy and exicted.", "I was supposed to keep you excited... I succeded"]
+"values": ["", "Yeah, take that, I win again, I am a great hero! Meow", "Ahhh you defeated me I will no longer terrorize this realm.
+(to yourself): He is so cute when he thinks he has won."]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
