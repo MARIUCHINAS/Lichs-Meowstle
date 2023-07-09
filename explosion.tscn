@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bhatxis08d52d"]
 
-[ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="1_8wx0o"]
+[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="1_8wx0o"]
 [ext_resource type="Script" path="res://explosion.gd" id="2_srqne"]
 [ext_resource type="PackedScene" path="res://light.tscn" id="3_r3d46"]
 

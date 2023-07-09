@@ -130,6 +130,7 @@ func _on_hud_start_game():
 	
 
 func end(ending):
+	hide_field()
 	print(ending)
 	
 	if ending=="death":
@@ -148,3 +149,27 @@ func _on_fight_timer_timeout():
 
 func _on_bullet_timer_timeout():
 	bullet=true
+
+func hide_field():
+	$"attack screen".hide()
+	$"health bar".hide()
+	$Ground.hide()
+	$Enemy.hide()
+	$Boss.hide()
+	$"boulder container".hide()
+	$"candle container".hide()
+	$"fight timer/timerscreen".hide()
+	$throne.hide()
+	$"energy bar".hide()
+	
+func show_field():
+	$"attack screen".show()
+	$"health bar".show()
+	$Ground.show()
+	$Enemy.show()
+	$Boss.show()
+	$"boulder container".show()
+	$"candle container".show()
+	$"fight timer/timerscreen".show()
+	$throne.show()
+	$"energy bar".show()
