@@ -136,6 +136,15 @@ func end(ending):
 	if ending=="death":
 		cutscene=load("res://cat_dies_cut_scene.tscn").instantiate()
 		add_child(cutscene)
+	if ending=="bored":
+		cutscene=load("res://cat_bored_cut_scene.tscn").instantiate()
+		add_child(cutscene)
+	if ending=="neutral":
+		cutscene=load("res://cat_neutral_cut_scene.tscn").instantiate()
+		add_child(cutscene)
+	if ending=="excited":
+		cutscene=load("res://cat_dies_cut_scene.tscn").instantiate()
+		add_child(cutscene)
 	#$HUD.show_stuff()
 	game_started = false
 	
