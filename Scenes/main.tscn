@@ -78,27 +78,27 @@ script = ExtResource("16_n51sj")
 
 [node name="boulder" parent="boulder container" instance=ExtResource("16_pbngs")]
 position = Vector2(225, 332)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 
 [node name="boulder2" parent="boulder container" instance=ExtResource("16_pbngs")]
 position = Vector2(843, 679)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 
 [node name="boulder3" parent="boulder container" instance=ExtResource("16_pbngs")]
 position = Vector2(655, 389)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 
 [node name="boulder4" parent="boulder container" instance=ExtResource("16_pbngs")]
 position = Vector2(185, 876)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 
 [node name="boulder5" parent="boulder container" instance=ExtResource("16_pbngs")]
 position = Vector2(505, 656)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 
 [node name="boulder6" parent="boulder container" instance=ExtResource("16_pbngs")]
 position = Vector2(808, 927)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 
 [node name="candle container" type="Node" parent="."]
 
