@@ -13,6 +13,8 @@ signal AboutToNotDie
 
 # speed is sometimes chaged during runtime, so base speed sets the default
 var speed
+var targetpos=Vector2(0,0)
+var collision
 
 @export var base_speed = 3
 
@@ -23,23 +25,35 @@ func _ready():
 	randomize()
 	speed = base_speed
 	randomdir()
+	updatevel()
 	
-func _enter_tree():
-	pass
 
 	
 func _physics_process(delta):
 	# Check for scare zones and run away from them
-	if out_of_bound():
-		randomdir()
 	for i in get_tree().get_root().get_children():
 			if i.name == "ScareZone":
-				var telepos=i.position
-				velocity=(position-telepos)
-				velocity = velocity.normalized() * speed
-	var collision = move_and_collide(velocity)
+				#var telepos=i.position
+				#velocity=(position-telepos)
+				#velocity = velocity.normalized() * speed
+				var vec =position-i.position
+				targetpos=i.position+vec*10000
+				
+	
+	if out_of_bound():
+		randomdir()
+		
+	if abs(position.length()-targetpos.length())<10:
+		randomdir()
+		
+	updatevel()
 	if collision:
-		velocity*=-1
+		velocity.slide(collision.get_normal())
+		velocity=velocity.normalized()*speed
+		print("sliding")
+	print(velocity)
+	collision = move_and_collide(velocity)
+
 	#move_and_slide()
 	#print(collision)
 
@@ -63,10 +77,13 @@ func out_of_bound():
 	else: return false
 	
 func randomdir():
-	var target=Vector2(randf_range(100,1200),randf_range(100,600))#range of posible target positions
-	velocity=(target-position)
+	var w=ProjectSettings.get_setting("display/window/size/viewport_width")
+	var h=ProjectSettings.get_setting("display/window/size/viewport_height")
+	targetpos=Vector2(randf_range(w*.1,w*.9),randf_range(h*.1,h*.9))#range of posible target positions
+
+func updatevel():
+	velocity=(targetpos-position)
 	velocity=velocity.normalized()*speed
-	#print(velocity)
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	print("Enemy out of bounds")

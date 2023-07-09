@@ -74,5 +74,4 @@ func _on_timer_timeout():
 	var distancemod=50000/(distance*distance)
 	if distancemod>=5:distancemod=5
 	var mod =distancemod*healthmod-2
-	print(mod)
 	get_tree().get_root().get_node("Main").energy+=mod
