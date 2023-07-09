@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfc2h2dsax7mp"]
+[gd_scene load_steps=4 format=3 uid="uid://cfc2h2dsax7mp"]
 
+[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="1_ejo1s"]
 [ext_resource type="Script" path="res://attack screen.gd" id="1_uqij5"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hk154"]
-size = Vector2(10, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_axom0"]
+atlas = ExtResource("1_ejo1s")
+region = Rect2(67, 135, 34, 35)
 
 [node name="attack screen" type="Sprite2D"]
-texture = SubResource("PlaceholderTexture2D_hk154")
+texture_filter = 1
+position = Vector2(19, 20)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_axom0")
 script = ExtResource("1_uqij5")
