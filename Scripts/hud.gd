@@ -20,12 +20,14 @@ func hide_stuff():
 			i.hide()
 			
 func show_stuff():
-	pass
+	for i in get_children():
+		if i != $PlayButtonAudioStreamPlayer:
+			if i != $CreditsColorRect:
+				i.show()
 
 func _on_button_button_up():
 	$PlayButtonAudioStreamPlayer.play()
 	hide_stuff()
-	show_stuff()
 	emit_signal("start_game")
 
 

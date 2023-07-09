@@ -99,7 +99,7 @@ func _on_hud_start_game():
 
 func _on_reheal_timer_timeout():
 	
-	if get_tree().get_root().get_node("Main").health >= 100:
+	if get_tree().get_root().get_node("Main").health >= 100 or get_tree().get_root().get_node("Main").health <= 0:
 		print("baba")
 	else:
 		get_tree().get_root().get_node("Main").health += 1
