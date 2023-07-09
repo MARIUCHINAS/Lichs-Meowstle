@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_5lxyv"]
 [ext_resource type="AudioStream" uid="uid://0qlf14sqbiqx" path="res://Sounds/GameStart.wav" id="2_vkmfn"]
-[ext_resource type="FontFile" uid="uid://ddeyhm8o00i0i" path="res://Fonts/Pixellari.ttf" id="3_mod0a"]
-[ext_resource type="Texture2D" uid="uid://dbd0jr37vrq6g" path="res://Art/jamlogo2023.png" id="4_fbp2x"]
-[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="5_u41np"]
+[ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_mod0a"]
+[ext_resource type="Texture2D" uid="uid://gbpcbs5kl6b0" path="res://Art/jamlogo2023.png" id="4_fbp2x"]
+[ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="5_u41np"]
 
 [sub_resource type="FontVariation" id="FontVariation_53uql"]
 base_font = ExtResource("3_mod0a")
@@ -96,9 +96,6 @@ theme_override_fonts/font = SubResource("FontVariation_q0wc7")
 theme_override_font_sizes/font_size = 32
 text = "Credits"
 
-[node name="PlayButtonAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_vkmfn")
-
 [node name="CreditsColorRect" type="ColorRect" parent="."]
 visible = false
 anchors_preset = 15
@@ -113,8 +110,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -781.874
-offset_bottom = -781.889
+offset_top = 35.1008
+offset_bottom = 35.0752
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = SubResource("FontVariation_53uql")
@@ -164,6 +161,9 @@ scale = Vector2(0.995709, 0.993499)
 theme_override_fonts/font = SubResource("FontVariation_q0wc7")
 theme_override_font_sizes/font_size = 32
 text = "Back"
+
+[node name="PlayButtonAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vkmfn")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1

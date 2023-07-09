@@ -36,4 +36,5 @@ func _on_credits_button_button_up():
 
 
 func _on_back_from_credits_button_button_up():
+	$CreditsColorRect/AnimationPlayer.current_animation = "[stop]"
 	$CreditsColorRect.hide()
