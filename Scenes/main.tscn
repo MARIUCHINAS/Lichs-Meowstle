@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://l8dsu225s5tt"]
+[gd_scene load_steps=21 format=3 uid="uid://l8dsu225s5tt"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_a7alu"]
 [ext_resource type="PackedScene" uid="uid://pny7dv07qjx0" path="res://Scenes/hud.tscn" id="1_qt6np"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://g7fyi7uu3mgx" path="res://Scenes/enemy.tscn" id="3_voi6q"]
 [ext_resource type="PackedScene" uid="uid://cle5aa4pt7ii3" path="res://Scenes/area_attack_line_middle.tscn" id="4_bgtmm"]
 [ext_resource type="PackedScene" uid="uid://ck8blsu575rom" path="res://area_attack.tscn" id="5_l1s78"]
+[ext_resource type="PackedScene" uid="uid://cfc2h2dsax7mp" path="res://attack_screen.tscn" id="6_ot1xg"]
 [ext_resource type="PackedScene" uid="uid://npnisnjvohj" path="res://ground.tscn" id="8_jpmju"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="10_sfd34"]
 [ext_resource type="Script" path="res://boss.gd" id="11_oc7q0"]
@@ -29,6 +30,10 @@ ScareZoneScene = ExtResource("2_rb0fe")
 BoulderAreaScene = ExtResource("3_qruod")
 AttackZoneScene = ExtResource("4_bgtmm")
 AreaAttack = ExtResource("5_l1s78")
+
+[node name="attack screen" parent="." instance=ExtResource("6_ot1xg")]
+z_index = 1
+position = Vector2(110, 47)
 
 [node name="health bar" parent="." instance=ExtResource("12_skt15")]
 z_index = 1
