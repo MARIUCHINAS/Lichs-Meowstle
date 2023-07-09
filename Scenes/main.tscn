@@ -151,8 +151,13 @@ script = ExtResource("18_ipdxy")
 position = Vector2(227, 49)
 scale = Vector2(4, 4)
 
+[node name="bullet_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="AboutToDie" from="Enemy" to="." method="_on_enemy_about_to_die"]
 [connection signal="AboutToNotDie" from="Enemy" to="." method="_on_enemy_about_to_not_die"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
 [connection signal="start_game" from="HUD" to="Enemy" method="_on_hud_start_game"]
 [connection signal="timeout" from="fight timer" to="." method="_on_fight_timer_timeout"]
+[connection signal="timeout" from="bullet_timer" to="." method="_on_bullet_timer_timeout"]

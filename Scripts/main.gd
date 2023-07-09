@@ -4,6 +4,7 @@ var game_started = false
 var health = 100
 var energy=0
 var ending="none"
+var bullet=true
 
 @export var ScareZoneScene: PackedScene
 @export var BoulderAreaScene: PackedScene
@@ -90,7 +91,7 @@ func _input(event):
 		
 		
 		
-			if (event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT):
+			if (event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT)and bullet:
 				var curr = AreaAttack.instantiate()
 				curr.matrix=(matrix[matrixnum])
 				matrixnum=randi_range(0,matrix.size()-1)
@@ -99,6 +100,7 @@ func _input(event):
 				curr.position = get_viewport().get_mouse_position()
 				#attack_pos=get_viewport().get_mouse_position()
 				#$"Attack Timer".start()
+				bullet=false
 		
 			
 
@@ -136,3 +138,7 @@ func _on_fight_timer_timeout():
 	if energy<=60 and energy>=30:end("neutral")
 	if energy>=60:end("exited")
 	print("timeout")
+
+
+func _on_bullet_timer_timeout():
+	bullet=true
