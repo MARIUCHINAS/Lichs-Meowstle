@@ -86,7 +86,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	print("Enemy out of bounds")
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
-	print("Screen Entered")
+	print("Entered")
 
 func _on_hud_start_game():
 	started = true
