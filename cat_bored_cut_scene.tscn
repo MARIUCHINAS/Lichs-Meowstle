@@ -1,24 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://87fi3q6d1dr4"]
+[gd_scene load_steps=10 format=3 uid="uid://ckqsd6tstw865"]
 
+[ext_resource type="Script" path="res://Scripts/cutscene.gd" id="1_uoha4"]
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_x2lj7"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="2_u1k5g"]
-[ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_ivq0h"]
-[ext_resource type="AudioStream" uid="uid://ci6gx4tlc80uy" path="res://Sounds/Woosh.wav" id="4_i8rly"]
-
-[sub_resource type="GDScript" id="GDScript_nbr0y"]
-script/source = "extends Node
-
-func _enter_tree():
-	$AnimationPlayer.current_animation = \"Cutscene\"
-	$AnimationPlayer.play(\"Cutscene\")
-"
+[ext_resource type="FontFile" uid="uid://ddeyhm8o00i0i" path="res://Fonts/Pixellari.ttf" id="3_ivq0h"]
+[ext_resource type="AudioStream" uid="uid://xtb7mjwejqgu" path="res://Sounds/Woosh.wav" id="4_i8rly"]
 
 [sub_resource type="FontVariation" id="FontVariation_eqo6w"]
 base_font = ExtResource("3_ivq0h")
 
 [sub_resource type="Animation" id="Animation_sers1"]
 resource_name = "Cutscene"
-length = 20.0
+length = 13.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -150,11 +143,11 @@ _data = {
 }
 
 [node name="Cat_Bored_Cut_Scene" type="Node"]
-script = SubResource("GDScript_nbr0y")
+script = ExtResource("1_uoha4")
 
 [node name="cat" parent="." instance=ExtResource("1_x2lj7")]
-modulate = Color(1, 1, 1, 0.24)
-position = Vector2(1129.17, 702)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1132, 702)
 scale = Vector2(16, 16)
 animation = &"still standing"
 frame_progress = 0.0
@@ -168,6 +161,7 @@ frame_progress = 0.59742
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 998.0
@@ -175,6 +169,7 @@ offset_bottom = 439.0
 size_flags_horizontal = 4
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -208,6 +203,7 @@ offset_right = 433.0
 offset_bottom = 430.0
 theme_override_fonts/font = SubResource("FontVariation_eqo6w")
 theme_override_font_sizes/font_size = 53
+text = "Boss (You)"
 autowrap_mode = 1
 
 [node name="DialogLabel" type="Label" parent="CanvasLayer/Control"]
@@ -219,6 +215,7 @@ offset_right = 988.0
 offset_bottom = 200.0
 theme_override_fonts/font = SubResource("FontVariation_eqo6w")
 theme_override_font_sizes/font_size = 53
+text = "Oh I was supposed to keep you excited... I failed"
 autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -228,6 +225,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 438.0

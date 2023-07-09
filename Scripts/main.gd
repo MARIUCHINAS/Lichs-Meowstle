@@ -5,7 +5,7 @@ var health = 100
 var energy=0
 var ending="none"
 var bullet=true
-var cutscene=NAN
+var cutscene=load("res://cat_dies_cut_scene.tscn").instantiate()
 
 @export var ScareZoneScene: PackedScene
 @export var BoulderAreaScene: PackedScene
@@ -112,7 +112,9 @@ func _process(delta):
 		end("death")
 	if energy<=0:energy=0
 	if energy>=100:energy=100
-	if cutscene.
+	if cutscene.finished:
+		cutscene=load("res://cat_dies_cut_scene.tscn").instantiate()
+		menu()
 	
 
 func _on_hud_start_game():
@@ -146,6 +148,7 @@ func end(ending):
 	elif ending=="excited":
 		cutscene=load("res://cat_dies_cut_scene.tscn").instantiate()
 		add_child(cutscene)
+	cutscene.play()
 	#$HUD.show_stuff()
 	game_started = false
 	
