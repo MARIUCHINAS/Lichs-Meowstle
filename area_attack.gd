@@ -22,7 +22,7 @@ func _on_timer_timeout():
 	var health=get_tree().get_root().get_node("Main").health
 	var distance=(position-heropos).length()
 	var healthmod=(100-health)*.01+1
-	var distancemod=150000/(distance*distance)
+	var distancemod=200000/(distance*distance)
 	if distancemod>=5:distancemod=5
 	var mod =distancemod*healthmod-2
 	get_tree().get_root().get_node("Main").energy+=mod

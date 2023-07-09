@@ -5,6 +5,7 @@ var health = 100
 var energy=0
 var ending="none"
 var bullet=true
+var cutscene=NAN
 
 @export var ScareZoneScene: PackedScene
 @export var BoulderAreaScene: PackedScene
@@ -101,6 +102,7 @@ func _input(event):
 				#attack_pos=get_viewport().get_mouse_position()
 				#$"Attack Timer".start()
 				bullet=false
+				$bullet_timer.start()
 		
 			
 
@@ -129,7 +131,11 @@ func _on_hud_start_game():
 
 func end(ending):
 	print(ending)
-	$HUD.show_stuff()
+	
+	if ending=="death":
+		cutscene=load("res://cat_dies_cut_scene.tscn").instantiate()
+		add_child(cutscene)
+	#$HUD.show_stuff()
 	game_started = false
 
 
