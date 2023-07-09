@@ -47,9 +47,12 @@ var spacing=60
 var inert=false
 
 func _ready():
-	pass
+	$Timer.start()
 
-func fire():
+
+
+
+func _on_timer_timeout():
 	for x in range(matrix_size):
 		for y in range(matrix_size):
 			if matrix[3][y][x]==1:
@@ -65,4 +68,3 @@ func fire():
 	var mod =distancemod*healthmod-3
 	print(mod)
 	get_tree().get_root().get_node("Main").energy+=distancemod*healthmod
-

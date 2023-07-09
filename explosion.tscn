@@ -61,7 +61,7 @@ radius = 14.0357
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_syren")
-frame_progress = 0.385859
+frame_progress = 0.917044
 script = ExtResource("2_srqne")
 
 [node name="Area2D" type="Area2D" parent="."]
