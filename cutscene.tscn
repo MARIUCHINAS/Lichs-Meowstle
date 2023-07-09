@@ -231,4 +231,6 @@ stream = ExtResource("5_blkk6")
 volume_db = 8.758
 pitch_scale = 0.71
 
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
 [editable path="cat"]

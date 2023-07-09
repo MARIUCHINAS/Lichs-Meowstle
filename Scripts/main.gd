@@ -112,6 +112,7 @@ func _process(delta):
 		end("death")
 	if energy<=0:energy=0
 	if energy>=100:energy=100
+	if cutscene.
 	
 
 func _on_hud_start_game():
@@ -136,13 +137,13 @@ func end(ending):
 	if ending=="death":
 		cutscene=load("res://cat_dies_cut_scene.tscn").instantiate()
 		add_child(cutscene)
-	if ending=="bored":
+	elif ending=="bored":
 		cutscene=load("res://cat_bored_cut_scene.tscn").instantiate()
 		add_child(cutscene)
-	if ending=="neutral":
+	elif ending=="neutral":
 		cutscene=load("res://cat_neutral_cut_scene.tscn").instantiate()
 		add_child(cutscene)
-	if ending=="excited":
+	elif ending=="excited":
 		cutscene=load("res://cat_dies_cut_scene.tscn").instantiate()
 		add_child(cutscene)
 	#$HUD.show_stuff()
@@ -154,10 +155,11 @@ func menu():
 
 
 func _on_fight_timer_timeout():
-	if energy<=30:ending=end("bored")
-	if energy<=60 and energy>=30:end("neutral")
-	if energy>=60:end("exited")
-	print("timeout")
+	if game_started:
+		if energy<=30:ending=end("bored")
+		if energy<=60 and energy>=30:end("neutral")
+		if energy>=60:end("exited")
+		print("timeout")
 
 
 func _on_bullet_timer_timeout():
