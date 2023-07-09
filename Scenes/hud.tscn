@@ -72,7 +72,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = SubResource("FontVariation_53uql")
 theme_override_font_sizes/font_size = 50
-text = "Game name"
+text = "Lichs Meowstle"
 
 [node name="StartButton" type="Button" parent="."]
 anchors_preset = 8
