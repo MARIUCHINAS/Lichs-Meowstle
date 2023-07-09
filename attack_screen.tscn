@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfc2h2dsax7mp"]
+
+[ext_resource type="Script" path="res://attack screen.gd" id="1_uqij5"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hk154"]
+size = Vector2(10, 16)
+
+[node name="attack screen" type="Sprite2D"]
+texture = SubResource("PlaceholderTexture2D_hk154")
+script = ExtResource("1_uqij5")

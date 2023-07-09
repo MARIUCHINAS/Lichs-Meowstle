@@ -50,7 +50,6 @@ func _physics_process(delta):
 	if collision:
 		velocity=velocity.slide(collision.get_normal())
 		velocity=velocity.normalized()*speed
-	print(velocity)
 	collision = move_and_collide(velocity*delta)
 	
 
