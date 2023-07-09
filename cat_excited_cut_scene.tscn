@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dytfrofb2d10r"]
+[gd_scene load_steps=10 format=3 uid="uid://vk06rycghucj"]
 
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_0kbrx"]
+[ext_resource type="Script" path="res://Scripts/cutscene.gd" id="1_pqxij"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="2_kr81p"]
-[ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_0d1kb"]
-[ext_resource type="AudioStream" uid="uid://ci6gx4tlc80uy" path="res://Sounds/Woosh.wav" id="4_tbup5"]
+[ext_resource type="FontFile" uid="uid://ddeyhm8o00i0i" path="res://Fonts/Pixellari.ttf" id="3_0d1kb"]
+[ext_resource type="AudioStream" uid="uid://xtb7mjwejqgu" path="res://Sounds/Woosh.wav" id="4_tbup5"]
 
 [sub_resource type="FontVariation" id="FontVariation_6p7tl"]
 base_font = ExtResource("3_0d1kb")
@@ -142,6 +143,7 @@ _data = {
 }
 
 [node name="Cat_Excited_Cut_Scene" type="Node"]
+script = ExtResource("1_pqxij")
 
 [node name="cat" parent="." instance=ExtResource("1_0kbrx")]
 modulate = Color(1, 1, 1, 0)
@@ -159,7 +161,6 @@ frame_progress = 0.59742
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 998.0
@@ -167,7 +168,6 @@ offset_bottom = 439.0
 size_flags_horizontal = 4
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -201,7 +201,6 @@ offset_right = 433.0
 offset_bottom = 430.0
 theme_override_fonts/font = SubResource("FontVariation_6p7tl")
 theme_override_font_sizes/font_size = 53
-text = "Boss (You)"
 autowrap_mode = 1
 
 [node name="DialogLabel" type="Label" parent="CanvasLayer/Control"]
@@ -213,7 +212,6 @@ offset_right = 988.0
 offset_bottom = 200.0
 theme_override_fonts/font = SubResource("FontVariation_6p7tl")
 theme_override_font_sizes/font_size = 53
-text = "I was supposed to keep you excited... I succeded"
 autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -223,7 +221,6 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 438.0

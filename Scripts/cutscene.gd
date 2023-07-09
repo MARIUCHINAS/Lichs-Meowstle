@@ -1,9 +1,9 @@
 extends Node
 var finished=false
 
-#func _ready():play()
+func _ready():play()
 func play():
-	print("JJJKJLJL;MB")
+	#print("JJJKJLJL;MB")
 	$AnimationPlayer.current_animation = "Cutscene"
 	$AnimationPlayer.play("Cutscene")
 

@@ -147,7 +147,7 @@ func end(ending):
 		cutscene=load("res://cat_neutral_cut_scene.tscn").instantiate()
 		add_child(cutscene)
 	elif ending=="excited":
-		cutscene=load("res://cat_dies_cut_scene.tscn").instantiate()
+		cutscene=load("res://cat_excited_cut_scene.tscn").instantiate()
 		add_child(cutscene)
 	cutscene.play()
 	#$HUD.show_stuff()
@@ -163,7 +163,7 @@ func _on_fight_timer_timeout():
 		if energy<=30:ending=end("bored")
 		if energy<=60 and energy>=30:end("neutral")
 		if energy>=60:end("exited")
-		print("timeout")
+		#print("timeout")
 
 
 func _on_bullet_timer_timeout():
