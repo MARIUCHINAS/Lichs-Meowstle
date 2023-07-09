@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://l8dsu225s5tt"]
+[gd_scene load_steps=22 format=3 uid="uid://l8dsu225s5tt"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_a7alu"]
+[ext_resource type="PackedScene" uid="uid://pny7dv07qjx0" path="res://Scenes/hud.tscn" id="1_qt6np"]
 [ext_resource type="PackedScene" uid="uid://ck5kshxk13pmq" path="res://Scenes/scare_zone.tscn" id="2_rb0fe"]
 [ext_resource type="PackedScene" uid="uid://l7ncvmtsiowf" path="res://Scenes/boulder.tscn" id="3_qruod"]
 [ext_resource type="PackedScene" uid="uid://g7fyi7uu3mgx" path="res://Scenes/enemy.tscn" id="3_voi6q"]
@@ -14,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="12_tcdil"]
 [ext_resource type="PackedScene" path="res://candles.tscn" id="13_db52u"]
 [ext_resource type="Script" path="res://health_bar.gd" id="13_jexxa"]
-[ext_resource type="PackedScene" uid="uid://bprgsiq1u73lb" path="res://energy_bar.tscn" id="15_ciypt"]
+[ext_resource type="PackedScene" path="res://energy_bar.tscn" id="15_ciypt"]
 [ext_resource type="Script" path="res://energy_bar.gd" id="16_n51sj"]
 [ext_resource type="PackedScene" uid="uid://pigfpjx3spm7" path="res://boulder.tscn" id="16_pbngs"]
 [ext_resource type="Script" path="res://Scenes/fight timer.gd" id="18_ipdxy"]
@@ -30,8 +31,6 @@ ScareZoneScene = ExtResource("2_rb0fe")
 BoulderAreaScene = ExtResource("3_qruod")
 AttackZoneScene = ExtResource("4_bgtmm")
 AreaAttack = ExtResource("5_l1s78")
-
-[node name="HUD" parent="." instance=ExtResource("6_6myga")]
 
 [node name="attack screen" parent="." instance=ExtResource("6_ot1xg")]
 z_index = 2
@@ -65,6 +64,15 @@ position = Vector2(517, 71)
 scale = Vector2(4, 4)
 frame_progress = 0.26566
 script = ExtResource("11_oc7q0")
+
+[node name="HUD" parent="." instance=ExtResource("1_qt6np")]
+
+[node name="throne" type="Sprite2D" parent="."]
+modulate = Color(0.913725, 0.913725, 0.913725, 1)
+texture_filter = 1
+position = Vector2(513, 145)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_qqhvf")
 
 [node name="energy bar" parent="." instance=ExtResource("15_ciypt")]
 offset_left = 941.0
@@ -149,5 +157,7 @@ one_shot = true
 
 [connection signal="AboutToDie" from="Enemy" to="." method="_on_enemy_about_to_die"]
 [connection signal="AboutToNotDie" from="Enemy" to="." method="_on_enemy_about_to_not_die"]
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="start_game" from="HUD" to="Enemy" method="_on_hud_start_game"]
 [connection signal="timeout" from="fight timer" to="." method="_on_fight_timer_timeout"]
 [connection signal="timeout" from="bullet_timer" to="." method="_on_bullet_timer_timeout"]
