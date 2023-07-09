@@ -58,7 +58,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.5, 4.8),
 "transitions": PackedFloat32Array(3.03143, 1, 1),
 "update": 1,
-"values": ["", "Im neutral", "Oh i was supposed to keep you excited... I failed"]
+"values": ["", "Im very unimpressed. I think you are failling on purpose.", "Oh I was supposed to keep you excited... I failed"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
