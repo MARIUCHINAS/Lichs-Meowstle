@@ -35,11 +35,13 @@ func _on_credits_button_button_up():
 	$PlayButtonAudioStreamPlayer.play()
 	$CreditsColorRect.show()
 	$CreditsColorRect/AnimationPlayer.current_animation = "Main"
+	$letter.hide()
 
 
 func _on_back_from_credits_button_button_up():
 	$CreditsColorRect/AnimationPlayer.current_animation = "[stop]"
 	$CreditsColorRect.hide()
+	$letter.show()
 
 
 func _on_intro_button_button_up():

@@ -58,7 +58,9 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.5, 4.8),
 "transitions": PackedFloat32Array(3.03143, 1, 1),
 "update": 1,
-"values": ["", "What are you doing, you are no really attacking me? Are you", "Ehh ... shit ... shit ... shit , nooo of course I am trying to kill you. FEAR ME!"]
+"values": ["", "Well, I guess I have won. That was a bit to easy though.", "Ohh no I am defeated!
+
+(to yourself): Damn I guess I made it to easy for him."]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
