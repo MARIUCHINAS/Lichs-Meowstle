@@ -1,10 +1,17 @@
 [gd_scene load_steps=10 format=3 uid="uid://drmbbwyomoqxq"]
 
-[ext_resource type="Script" path="res://cat_dies_cut_scene.gd" id="1_7bhwn"]
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_beni4"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="2_xh13r"]
 [ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_5kjq5"]
 [ext_resource type="AudioStream" uid="uid://ci6gx4tlc80uy" path="res://Sounds/Woosh.wav" id="4_tpa34"]
+
+[sub_resource type="GDScript" id="GDScript_lorg4"]
+script/source = "extends Node
+
+func _enter_tree():
+	$AnimationPlayer.current_animation = \"Cutscene\"
+	$AnimationPlayer.play(\"Cutscene\")
+"
 
 [sub_resource type="FontVariation" id="FontVariation_nu6b8"]
 base_font = ExtResource("3_5kjq5")
@@ -58,7 +65,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.5, 4.8),
 "transitions": PackedFloat32Array(3.03143, 1, 1),
 "update": 1,
-"values": ["", "I believe... I belive... I don't believe. I don't believe! Take me back! Mrreow!", "Noo i didn't mean to kill you. I was supposed to keep you exited."]
+"values": ["", "I believe... I belive... I don't believe. I don't believe! Take me back! Mrreow!", "Oh I was supposed to keep you excited not kill you... I failed."]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -143,19 +150,19 @@ _data = {
 }
 
 [node name="CatDiesCutScene" type="Node"]
-script = ExtResource("1_7bhwn")
+script = SubResource("GDScript_lorg4")
 
 [node name="cat" parent="." instance=ExtResource("1_beni4")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1132, 702)
+modulate = Color(1, 1, 1, 0.24)
+position = Vector2(1129.17, 702)
 rotation = 1.5708
 scale = Vector2(16, 16)
 animation = &"still standing"
 frame_progress = 0.0
 
 [node name="Boss" parent="." instance=ExtResource("2_xh13r")]
-modulate = Color(1, 1, 1, 0.56)
-position = Vector2(600, 728)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-534, 728)
 scale = Vector2(16, 16)
 frame_progress = 0.59742
 
@@ -202,7 +209,6 @@ offset_right = 433.0
 offset_bottom = 430.0
 theme_override_fonts/font = SubResource("FontVariation_nu6b8")
 theme_override_font_sizes/font_size = 53
-text = "Boss (You)"
 autowrap_mode = 1
 
 [node name="DialogLabel" type="Label" parent="CanvasLayer/Control"]
@@ -214,7 +220,6 @@ offset_right = 988.0
 offset_bottom = 200.0
 theme_override_fonts/font = SubResource("FontVariation_nu6b8")
 theme_override_font_sizes/font_size = 53
-text = "Noo i didn't mean to kill you. I was supposed to keep you exited."
 autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

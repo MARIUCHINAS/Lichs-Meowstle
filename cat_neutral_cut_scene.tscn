@@ -1,10 +1,17 @@
 [gd_scene load_steps=10 format=3 uid="uid://8asbkehx648o"]
 
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_mmiyg"]
-[ext_resource type="Script" path="res://cat_neutral_cut_scene.gd" id="1_r7f31"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="2_n23i5"]
 [ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_hunap"]
 [ext_resource type="AudioStream" uid="uid://ci6gx4tlc80uy" path="res://Sounds/Woosh.wav" id="4_i7xuq"]
+
+[sub_resource type="GDScript" id="GDScript_g5uqf"]
+script/source = "extends Node
+
+func _enter_tree():
+	$AnimationPlayer.current_animation = \"Cutscene\"
+	$AnimationPlayer.play(\"Cutscene\")
+"
 
 [sub_resource type="FontVariation" id="FontVariation_cuyf3"]
 base_font = ExtResource("3_hunap")
@@ -58,7 +65,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.5, 4.8),
 "transitions": PackedFloat32Array(3.03143, 1, 1),
 "update": 1,
-"values": ["", "Im neutral", "Oh i was supposed to keep you excited... I failed"]
+"values": ["", "Im very unimpressed. I think you are failling on purpose.", "Oh I was supposed to keep you excited... I failed"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -143,11 +150,11 @@ _data = {
 }
 
 [node name="Cat_neutral_cut_scene" type="Node"]
-script = ExtResource("1_r7f31")
+script = SubResource("GDScript_g5uqf")
 
 [node name="cat" parent="." instance=ExtResource("1_mmiyg")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1132, 702)
+modulate = Color(1, 1, 1, 0.24)
+position = Vector2(1129.17, 702)
 scale = Vector2(16, 16)
 animation = &"still standing"
 frame_progress = 0.0
