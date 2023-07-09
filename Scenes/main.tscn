@@ -143,7 +143,7 @@ position = Vector2(391, 666)
 scale = Vector2(3, 3)
 
 [node name="fight timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 30.0
 one_shot = true
 script = ExtResource("18_ipdxy")
 

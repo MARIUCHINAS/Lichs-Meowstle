@@ -3,7 +3,6 @@ var finished=false
 
 #func _ready():play()
 func play():
-	self.show()
 	print("JJJKJLJL;MB")
 	$AnimationPlayer.current_animation = "Cutscene"
 	$AnimationPlayer.play("Cutscene")
