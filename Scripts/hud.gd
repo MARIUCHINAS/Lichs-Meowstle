@@ -25,7 +25,10 @@ func show_stuff():
 	for i in get_children():
 		if i != $PlayButtonAudioStreamPlayer:
 			if i != $CreditsColorRect:
-				i.show()
+				if i != $PlayButtonAudioStreamPlayer:
+					if i != $MusicActionAudioStreamPlayer2D:
+						if i != $MusicIdleAudioStreamPlayer:
+							i.show()
 
 func _on_button_button_up():
 	$PlayButtonAudioStreamPlayer.play()
