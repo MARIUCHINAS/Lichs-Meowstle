@@ -138,6 +138,10 @@ func end(ending):
 		add_child(cutscene)
 	#$HUD.show_stuff()
 	game_started = false
+	
+func menu():
+	show_field()
+	$HUD.show_stuff()
 
 
 func _on_fight_timer_timeout():
