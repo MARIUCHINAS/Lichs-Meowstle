@@ -3,6 +3,7 @@ extends Node
 var game_started = false
 var health = 100
 var energy=0
+var ending="none"
 
 @export var ScareZoneScene: PackedScene
 @export var BoulderAreaScene: PackedScene
@@ -103,11 +104,11 @@ func _input(event):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if health <= 0:
-		$HUD.show_stuff()
-		$Enemy/DeathAudioStreamPlayer.play()
-		game_started = false
-
+	if health <= 0 and game_started:
+		end("death")
+	if energy<=0:energy=0
+	if energy>=100:energy=100
+	
 
 func _on_hud_start_game():
 	health = 100
@@ -116,15 +117,22 @@ func _on_hud_start_game():
 	$"fight timer".start()
 
 
-func _on_enemy_about_to_die():
-	KillEnemy = true
+#func _on_enemy_about_to_die():
+#	KillEnemy = true
 
 
-func _on_enemy_about_to_not_die():
-	KillEnemy = false
+#func _on_enemy_about_to_not_die():
+#	KillEnemy = false
+	
 
-
+func end(ending):
+	print(ending)
+	$HUD.show_stuff()
+	game_started = false
 
 
 func _on_fight_timer_timeout():
+	if energy<=30:ending=end("bored")
+	if energy<=60 and energy>=30:end("neutral")
+	if energy>=60:end("exited")
 	print("timeout")
