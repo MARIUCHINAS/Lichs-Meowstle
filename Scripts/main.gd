@@ -103,10 +103,15 @@ func _input(event):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if health <= 0:
+		$HUD.show_stuff()
+		$Enemy/DeathAudioStreamPlayer.play()
+		game_started = false
 
 
 func _on_hud_start_game():
+	health = 100
+	energy = 0
 	game_started = true
 	$"fight timer".start()
 
