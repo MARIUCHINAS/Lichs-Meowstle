@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://djy3d5ks8oajb"]
+[gd_scene load_steps=10 format=3 uid="uid://drmbbwyomoqxq"]
 
 [ext_resource type="Script" path="res://Scripts/cutscene.gd" id="1_avo0i"]
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_beni4"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="2_xh13r"]
-[ext_resource type="FontFile" uid="uid://ddeyhm8o00i0i" path="res://Fonts/Pixellari.ttf" id="3_5kjq5"]
-[ext_resource type="AudioStream" uid="uid://xtb7mjwejqgu" path="res://Sounds/Woosh.wav" id="4_tpa34"]
+[ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_5kjq5"]
+[ext_resource type="AudioStream" uid="uid://ci6gx4tlc80uy" path="res://Sounds/Woosh.wav" id="4_tpa34"]
 
 [sub_resource type="FontVariation" id="FontVariation_nu6b8"]
 base_font = ExtResource("3_5kjq5")
