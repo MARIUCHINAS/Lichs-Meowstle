@@ -1,14 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://34p061g1rk16"]
+[gd_scene load_steps=9 format=3 uid="uid://34p061g1rk16"]
 
+[ext_resource type="Script" path="res://Scripts/cutscene.gd" id="1_a8t80"]
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_ifs40"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="2_1ivfc"]
 [ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_sgscb"]
 
 [sub_resource type="FontVariation" id="FontVariation_8e0lo"]
 base_font = ExtResource("3_sgscb")
-
-[sub_resource type="Animation" id="Animation_s4hxj"]
-length = 0.001
 
 [sub_resource type="Animation" id="Animation_sers1"]
 resource_name = "Cutscene"
@@ -56,10 +54,10 @@ tracks/3/path = NodePath("CanvasLayer/Control/DialogLabel:text")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.5, 4.8),
-"transitions": PackedFloat32Array(3.03143, 1, 1),
+"times": PackedFloat32Array(0, 2.5, 4.8, 6.9),
+"transitions": PackedFloat32Array(3.03143, 1, 1, 1),
 "update": 1,
-"values": ["", "Meow", "I've been waiting for you, hero"]
+"values": ["", "Meow", "I've been waiting for you, hero", "Come here little one, I just want to talk"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -86,6 +84,9 @@ tracks/5/keys = {
 "values": [Vector2(-534, 728), Vector2(600, 728), Vector2(500, 728)]
 }
 
+[sub_resource type="Animation" id="Animation_s4hxj"]
+length = 0.001
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3uyhb"]
 _data = {
 "Cutscene": SubResource("Animation_sers1"),
@@ -93,6 +94,7 @@ _data = {
 }
 
 [node name="Cutscene" type="Node"]
+script = ExtResource("1_a8t80")
 
 [node name="cat" parent="." instance=ExtResource("1_ifs40")]
 modulate = Color(1, 1, 1, 0)
@@ -102,7 +104,8 @@ animation = &"still standing"
 frame_progress = 0.0
 
 [node name="Boss" parent="." instance=ExtResource("2_1ivfc")]
-position = Vector2(500, 728)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-534, 728)
 scale = Vector2(16, 16)
 frame_progress = 0.59742
 
@@ -142,25 +145,26 @@ color = Color(0.105882, 0.105882, 0.105882, 1)
 
 [node name="NameLabel" type="Label" parent="CanvasLayer/Control"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 5.0
 offset_top = 373.0
 offset_right = 433.0
 offset_bottom = 430.0
 theme_override_fonts/font = SubResource("FontVariation_8e0lo")
 theme_override_font_sizes/font_size = 53
-text = "Boss (You)"
 
 [node name="DialogLabel" type="Label" parent="CanvasLayer/Control"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 86.0
 offset_right = 436.0
 offset_bottom = 143.0
 theme_override_fonts/font = SubResource("FontVariation_8e0lo")
 theme_override_font_sizes/font_size = 53
-text = "I've been waiting for you, hero"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_3uyhb")
 }
