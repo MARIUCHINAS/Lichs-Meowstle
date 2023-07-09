@@ -16,7 +16,7 @@ var speed
 var targetpos=Vector2(0,0)
 var collision
 
-@export var base_speed = 100
+@export var base_speed = 200
 
 @onready var stats = $Stat
 
@@ -50,13 +50,10 @@ func _physics_process(delta):
 	if collision:
 		velocity=velocity.slide(collision.get_normal())
 		velocity=velocity.normalized()*speed
-		print("sliding")
-		print(collision.get_normal())
-	#print(velocity)
+	print(velocity)
 	collision = move_and_collide(velocity*delta)
+	
 
-	#move_and_slide()
-	#print(collision)
 
 func Indanger(InDanger):
 	if InDanger:
