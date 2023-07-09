@@ -7,19 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://g7fyi7uu3mgx" path="res://Scenes/enemy.tscn" id="3_voi6q"]
 [ext_resource type="PackedScene" uid="uid://cle5aa4pt7ii3" path="res://Scenes/area_attack_line_middle.tscn" id="4_bgtmm"]
 [ext_resource type="PackedScene" uid="uid://ck8blsu575rom" path="res://area_attack.tscn" id="5_l1s78"]
-[ext_resource type="PackedScene" path="res://attack_screen.tscn" id="6_ot1xg"]
+[ext_resource type="PackedScene" uid="uid://cfc2h2dsax7mp" path="res://attack_screen.tscn" id="6_ot1xg"]
 [ext_resource type="PackedScene" uid="uid://npnisnjvohj" path="res://ground.tscn" id="8_jpmju"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="10_sfd34"]
 [ext_resource type="Script" path="res://boss.gd" id="11_oc7q0"]
 [ext_resource type="PackedScene" path="res://health_bar.tscn" id="12_skt15"]
-[ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="12_tcdil"]
+[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="12_tcdil"]
 [ext_resource type="PackedScene" path="res://candles.tscn" id="13_db52u"]
 [ext_resource type="Script" path="res://health_bar.gd" id="13_jexxa"]
 [ext_resource type="PackedScene" path="res://energy_bar.tscn" id="15_ciypt"]
 [ext_resource type="Script" path="res://energy_bar.gd" id="16_n51sj"]
 [ext_resource type="PackedScene" uid="uid://pigfpjx3spm7" path="res://boulder.tscn" id="16_pbngs"]
 [ext_resource type="Script" path="res://Scenes/fight timer.gd" id="18_ipdxy"]
-[ext_resource type="PackedScene" path="res://timerscreen.tscn" id="20_saxbn"]
+[ext_resource type="PackedScene" uid="uid://d05prwf7fh4qn" path="res://timerscreen.tscn" id="20_saxbn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqhvf"]
 atlas = ExtResource("12_tcdil")
@@ -82,7 +82,7 @@ offset_bottom = 75.0
 scale = Vector2(4, 4)
 script = ExtResource("16_n51sj")
 
-[node name="boulder container" type="Node" parent="."]
+[node name="boulder container" type="Node2D" parent="."]
 
 [node name="boulder" parent="boulder container" instance=ExtResource("16_pbngs")]
 position = Vector2(225, 332)
@@ -108,7 +108,7 @@ scale = Vector2(3, 3)
 position = Vector2(808, 927)
 scale = Vector2(3, 3)
 
-[node name="candle container" type="Node" parent="."]
+[node name="candle container" type="Node2D" parent="."]
 
 [node name="candles" parent="candle container" instance=ExtResource("13_db52u")]
 position = Vector2(367, 145)
