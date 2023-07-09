@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dytfrofb2d10r"]
+[gd_scene load_steps=10 format=3 uid="uid://vk06rycghucj"]
 
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_0kbrx"]
+[ext_resource type="Script" path="res://Scripts/cutscene.gd" id="1_pqxij"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="2_kr81p"]
-[ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_0d1kb"]
-[ext_resource type="AudioStream" uid="uid://ci6gx4tlc80uy" path="res://Sounds/Woosh.wav" id="4_tbup5"]
+[ext_resource type="FontFile" uid="uid://ddeyhm8o00i0i" path="res://Fonts/Pixellari.ttf" id="3_0d1kb"]
+[ext_resource type="AudioStream" uid="uid://xtb7mjwejqgu" path="res://Sounds/Woosh.wav" id="4_tbup5"]
 
 [sub_resource type="FontVariation" id="FontVariation_6p7tl"]
 base_font = ExtResource("3_0d1kb")
@@ -57,7 +58,8 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.5, 4.8),
 "transitions": PackedFloat32Array(3.03143, 1, 1),
 "update": 1,
-"values": ["", "I am very mappy and exicted.", "I was supposed to keep you excited... I succeded"]
+"values": ["", "Yeah, take that, I win again, I am a great hero! Meow", "Ahhh you defeated me I will no longer terrorize this realm.
+(to yourself): He is so cute when he thinks he has won."]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -142,6 +144,7 @@ _data = {
 }
 
 [node name="Cat_Excited_Cut_Scene" type="Node"]
+script = ExtResource("1_pqxij")
 
 [node name="cat" parent="." instance=ExtResource("1_0kbrx")]
 modulate = Color(1, 1, 1, 0)
@@ -229,5 +232,7 @@ color = Color(0.0823529, 0, 0.0117647, 1)
 stream = ExtResource("4_tbup5")
 volume_db = 8.758
 pitch_scale = 0.71
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="cat"]

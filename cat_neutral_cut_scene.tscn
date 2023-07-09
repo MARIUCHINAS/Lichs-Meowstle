@@ -58,7 +58,9 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.5, 4.8),
 "transitions": PackedFloat32Array(3.03143, 1, 1),
 "update": 1,
-"values": ["", "Im very unimpressed. I think you are failling on purpose.", "Oh I was supposed to keep you excited... I failed"]
+"values": ["", "Well, I guess I have won. That was a bit to easy though.", "Ohh no I am defeated!
+
+(to yourself): Damn I guess I made it to easy for him."]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -146,8 +148,8 @@ _data = {
 script = ExtResource("1_feoww")
 
 [node name="cat" parent="." instance=ExtResource("1_mmiyg")]
-modulate = Color(1, 1, 1, 0.24)
-position = Vector2(1129.17, 702)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1132, 702)
 scale = Vector2(16, 16)
 animation = &"still standing"
 frame_progress = 0.0
@@ -231,5 +233,7 @@ color = Color(0.0823529, 0, 0.0117647, 1)
 stream = ExtResource("4_i7xuq")
 volume_db = 8.758
 pitch_scale = 0.71
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="cat"]

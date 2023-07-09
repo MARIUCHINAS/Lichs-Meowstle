@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="12_tcdil"]
 [ext_resource type="PackedScene" path="res://candles.tscn" id="13_db52u"]
 [ext_resource type="Script" path="res://health_bar.gd" id="13_jexxa"]
-[ext_resource type="PackedScene" uid="uid://bprgsiq1u73lb" path="res://energy_bar.tscn" id="15_ciypt"]
+[ext_resource type="PackedScene" path="res://energy_bar.tscn" id="15_ciypt"]
 [ext_resource type="Script" path="res://energy_bar.gd" id="16_n51sj"]
 [ext_resource type="PackedScene" uid="uid://pigfpjx3spm7" path="res://boulder.tscn" id="16_pbngs"]
 [ext_resource type="Script" path="res://Scenes/fight timer.gd" id="18_ipdxy"]
