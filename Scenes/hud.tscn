@@ -129,7 +129,6 @@ stream = ExtResource("2_vkmfn")
 volume_db = -5.0
 
 [node name="CreditsColorRect" type="ColorRect" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -157,12 +156,13 @@ text = "
 
 
 
-
+Mediaval Theme 01 and  Mediaval Theme 02 by Strobotone (Free Music Archive) (CC-BY-ND0)
 
 MARIUCHINAS (MARI0x83) - Programming
 Yetan - Art / Programming
 rhythmgemz - Story Writing
-slimetiem - Music"
+slimetiem - Other things"
+autowrap_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="CreditsColorRect/CreditsLabel"]
 layout_mode = 0

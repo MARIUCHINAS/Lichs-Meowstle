@@ -16,8 +16,10 @@ func _process(delta):
 func hide_stuff():
 	# This hides every HUD element execpt $PlayButtonAudioStreamPlayer
 	for i in get_children():
-		if i != $PlayButtonAudioStreamPlayer or i != $MusicIdleAudioStreamPlayer or i != $MusicActionAudioStreamPlayer2D:
-			i.hide()
+		if i != $PlayButtonAudioStreamPlayer:
+			if i != $MusicActionAudioStreamPlayer2D:
+				if i != $MusicIdleAudioStreamPlayer:
+					i.hide()
 			
 func show_stuff():
 	for i in get_children():
