@@ -20,6 +20,10 @@
 [ext_resource type="Script" path="res://Scenes/fight timer.gd" id="18_ipdxy"]
 [ext_resource type="PackedScene" uid="uid://d05prwf7fh4qn" path="res://timerscreen.tscn" id="20_saxbn"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqhvf"]
+atlas = ExtResource("12_tcdil")
+region = Rect2(0, 136, 68, 33)
+
 [node name="Main" type="Node"]
 script = ExtResource("1_a7alu")
 ScareZoneScene = ExtResource("2_rb0fe")
