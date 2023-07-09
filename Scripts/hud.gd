@@ -5,7 +5,7 @@ signal start_game
 var health = 100
 
 func _ready():
-	pass
+	$MusicIdleAudioStreamPlayer.play()
 	
 	
 func _process(delta):
@@ -16,7 +16,7 @@ func _process(delta):
 func hide_stuff():
 	# This hides every HUD element execpt $PlayButtonAudioStreamPlayer
 	for i in get_children():
-		if i != $PlayButtonAudioStreamPlayer:
+		if i != $PlayButtonAudioStreamPlayer or i != $MusicIdleAudioStreamPlayer or i != $MusicActionAudioStreamPlayer2D:
 			i.hide()
 			
 func show_stuff():
@@ -27,6 +27,8 @@ func show_stuff():
 
 func _on_button_button_up():
 	$PlayButtonAudioStreamPlayer.play()
+	$MusicIdleAudioStreamPlayer.stop()
+	$MusicActionAudioStreamPlayer2D.play()
 	hide_stuff()
 	emit_signal("start_game")
 

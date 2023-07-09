@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://pny7dv07qjx0"]
+[gd_scene load_steps=16 format=3 uid="uid://pny7dv07qjx0"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_5lxyv"]
 [ext_resource type="AudioStream" uid="uid://0qlf14sqbiqx" path="res://Sounds/GameStart.wav" id="2_vkmfn"]
-[ext_resource type="FontFile" uid="uid://ddeyhm8o00i0i" path="res://Fonts/Pixellari.ttf" id="3_mod0a"]
-[ext_resource type="Texture2D" uid="uid://dbd0jr37vrq6g" path="res://Art/jamlogo2023.png" id="4_fbp2x"]
-[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="5_u41np"]
+[ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_mod0a"]
+[ext_resource type="Texture2D" uid="uid://gbpcbs5kl6b0" path="res://Art/jamlogo2023.png" id="4_fbp2x"]
+[ext_resource type="Texture2D" uid="uid://cxnv0l6kcqjd" path="res://16x16template.png" id="5_u41np"]
+[ext_resource type="AudioStream" uid="uid://ci2n64x3ebhl5" path="res://Sounds/Strobotone - Medieval Theme 02.mp3" id="6_myht0"]
+[ext_resource type="AudioStream" uid="uid://b5taowl7proby" path="res://Sounds/Strobotone - Medieval Theme 01.mp3" id="7_bqwfg"]
 
 [sub_resource type="FontVariation" id="FontVariation_53uql"]
 base_font = ExtResource("3_mod0a")
@@ -124,6 +126,7 @@ text = "Intro"
 
 [node name="PlayButtonAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vkmfn")
+volume_db = -5.0
 
 [node name="CreditsColorRect" type="ColorRect" parent="."]
 visible = false
@@ -139,8 +142,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -781.874
-offset_bottom = -781.889
+offset_top = -977.798
+offset_bottom = -977.813
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = SubResource("FontVariation_53uql")
@@ -225,6 +228,12 @@ you have a limited time to give him the time of his life.
 Good Luck
 
 PS: I know it is hard but dont pet the hero"
+
+[node name="MusicIdleAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_myht0")
+
+[node name="MusicActionAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_bqwfg")
 
 [connection signal="button_up" from="StartButton" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="CreditsButton" to="." method="_on_credits_button_button_up"]
