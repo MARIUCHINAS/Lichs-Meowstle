@@ -20,7 +20,6 @@ func _process(delta):
 	pass
 
 func create_screen(matrix):
-	print(backindent)
 	for i in get_children():
 		i.queue_free()
 	for x in range(matrix_size):

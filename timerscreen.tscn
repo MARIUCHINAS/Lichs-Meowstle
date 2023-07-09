@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://d05prwf7fh4qn"]
+
+[ext_resource type="Texture2D" uid="uid://dnv4de6pe5u7s" path="res://16x16template.png" id="1_r4b3w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i64bv"]
+atlas = ExtResource("1_r4b3w")
+region = Rect2(67, 169, 68, 17)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ur5yo"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bk3g3"]
+bg_color = Color(0.388235, 0.67451, 0.760784, 1)
+
+[sub_resource type="Theme" id="Theme_o8yji"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_ur5yo")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_bk3g3")
+
+[node name="timerscreen" type="Sprite2D"]
+z_index = 1
+texture_filter = 1
+texture = SubResource("AtlasTexture_i64bv")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+z_index = -1
+offset_left = -30.0
+offset_top = -4.0
+offset_right = 30.0
+offset_bottom = 6.0
+theme = SubResource("Theme_o8yji")
+value = 30.0
+show_percentage = false

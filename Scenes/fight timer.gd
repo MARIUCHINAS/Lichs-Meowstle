@@ -8,4 +8,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Label.text="time left: "+str(time_left)
+	$timerscreen/ProgressBar.value=time_left*100/wait_time

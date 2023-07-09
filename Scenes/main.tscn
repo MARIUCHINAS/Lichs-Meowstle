@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://l8dsu225s5tt"]
+[gd_scene load_steps=22 format=3 uid="uid://l8dsu225s5tt"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_a7alu"]
 [ext_resource type="PackedScene" uid="uid://pny7dv07qjx0" path="res://Scenes/hud.tscn" id="1_qt6np"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://g7fyi7uu3mgx" path="res://Scenes/enemy.tscn" id="3_voi6q"]
 [ext_resource type="PackedScene" uid="uid://cle5aa4pt7ii3" path="res://Scenes/area_attack_line_middle.tscn" id="4_bgtmm"]
 [ext_resource type="PackedScene" uid="uid://ck8blsu575rom" path="res://area_attack.tscn" id="5_l1s78"]
-[ext_resource type="PackedScene" path="res://attack_screen.tscn" id="6_ot1xg"]
+[ext_resource type="PackedScene" uid="uid://cfc2h2dsax7mp" path="res://attack_screen.tscn" id="6_ot1xg"]
 [ext_resource type="PackedScene" uid="uid://npnisnjvohj" path="res://ground.tscn" id="8_jpmju"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="10_sfd34"]
 [ext_resource type="Script" path="res://boss.gd" id="11_oc7q0"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://energy_bar.gd" id="16_n51sj"]
 [ext_resource type="PackedScene" uid="uid://pigfpjx3spm7" path="res://boulder.tscn" id="16_pbngs"]
 [ext_resource type="Script" path="res://Scenes/fight timer.gd" id="18_ipdxy"]
+[ext_resource type="PackedScene" uid="uid://d05prwf7fh4qn" path="res://timerscreen.tscn" id="20_saxbn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqhvf"]
 atlas = ExtResource("12_tcdil")
@@ -32,8 +33,9 @@ AttackZoneScene = ExtResource("4_bgtmm")
 AreaAttack = ExtResource("5_l1s78")
 
 [node name="attack screen" parent="." instance=ExtResource("6_ot1xg")]
-z_index = 1
-position = Vector2(110, 47)
+z_index = 2
+position = Vector2(870, 58)
+scale = Vector2(3, 3)
 
 [node name="health bar" parent="." instance=ExtResource("12_skt15")]
 z_index = 1
@@ -145,12 +147,9 @@ wait_time = 10.0
 one_shot = true
 script = ExtResource("18_ipdxy")
 
-[node name="Label" type="Label" parent="fight timer"]
-offset_left = 129.0
-offset_top = 19.0
-offset_right = 282.0
-offset_bottom = 45.0
-text = "dasdsadsadsdasdas"
+[node name="timerscreen" parent="fight timer" instance=ExtResource("20_saxbn")]
+position = Vector2(227, 49)
+scale = Vector2(4, 4)
 
 [connection signal="AboutToDie" from="Enemy" to="." method="_on_enemy_about_to_die"]
 [connection signal="AboutToNotDie" from="Enemy" to="." method="_on_enemy_about_to_not_die"]
