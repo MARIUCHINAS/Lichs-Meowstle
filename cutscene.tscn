@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/cutscene.gd" id="1_a8t80"]
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_ifs40"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="2_1ivfc"]
-[ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_sgscb"]
-[ext_resource type="AudioStream" uid="uid://ci6gx4tlc80uy" path="res://Sounds/Woosh.wav" id="5_blkk6"]
+[ext_resource type="FontFile" uid="uid://ddeyhm8o00i0i" path="res://Fonts/Pixellari.ttf" id="3_sgscb"]
+[ext_resource type="AudioStream" uid="uid://xtb7mjwejqgu" path="res://Sounds/Woosh.wav" id="5_blkk6"]
 
 [sub_resource type="FontVariation" id="FontVariation_8e0lo"]
 base_font = ExtResource("3_sgscb")
