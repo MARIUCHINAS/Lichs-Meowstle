@@ -11,7 +11,7 @@ base_font = ExtResource("3_sgscb")
 
 [sub_resource type="Animation" id="Animation_sers1"]
 resource_name = "Cutscene"
-length = 20.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -155,7 +155,7 @@ frame_progress = 0.0
 
 [node name="Boss" parent="." instance=ExtResource("2_1ivfc")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(500, 728)
+position = Vector2(600, 728)
 scale = Vector2(16, 16)
 frame_progress = 0.59742
 

@@ -96,6 +96,23 @@ theme_override_fonts/font = SubResource("FontVariation_q0wc7")
 theme_override_font_sizes/font_size = 32
 text = "Credits"
 
+[node name="IntroButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = 81.0
+offset_right = 82.9999
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.995709, 0.993499)
+theme_override_fonts/font = SubResource("FontVariation_q0wc7")
+theme_override_font_sizes/font_size = 32
+text = "Intro"
+
 [node name="PlayButtonAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vkmfn")
 
@@ -176,4 +193,5 @@ layer_0/tile_data = PackedInt32Array(-458760, 0, 5, -393224, 0, 5, -327688, 0, 5
 
 [connection signal="button_up" from="StartButton" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="CreditsButton" to="." method="_on_credits_button_button_up"]
+[connection signal="button_up" from="IntroButton" to="." method="_on_intro_button_button_up"]
 [connection signal="button_up" from="CreditsColorRect/BackFromCreditsButton" to="." method="_on_back_from_credits_button_button_up"]

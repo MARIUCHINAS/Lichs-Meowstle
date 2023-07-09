@@ -1,12 +1,14 @@
 extends Node
 var finished=false
 
-func _ready():play()
+#func _ready():play()
 func play():
+	self.show()
+	print("JJJKJLJL;MB")
 	$AnimationPlayer.current_animation = "Cutscene"
 	$AnimationPlayer.play("Cutscene")
 
 
 func _on_animation_player_animation_finished(anim_name):
-	print("JJJ")
+	#print("JJJ")
 	finished=true

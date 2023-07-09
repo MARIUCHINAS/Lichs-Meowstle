@@ -40,3 +40,10 @@ func _on_credits_button_button_up():
 func _on_back_from_credits_button_button_up():
 	$CreditsColorRect/AnimationPlayer.current_animation = "[stop]"
 	$CreditsColorRect.hide()
+
+
+func _on_intro_button_button_up():
+	get_parent().cutscene=load("res://cutscene.tscn").instantiate()
+	get_parent().cutscene.play()
+	hide_stuff()
+	get_parent().hide_field()
