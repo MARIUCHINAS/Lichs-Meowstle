@@ -25,7 +25,7 @@ base_font = ExtResource("3_ivq0h")
 
 [sub_resource type="Animation" id="Animation_sers1"]
 resource_name = "Cutscene"
-length = 13.0
+length = 10.246
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -245,5 +245,7 @@ color = Color(0.0823529, 0, 0.0117647, 1)
 stream = ExtResource("4_i8rly")
 volume_db = 8.758
 pitch_scale = 0.71
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="cat"]

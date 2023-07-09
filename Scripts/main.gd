@@ -115,7 +115,6 @@ func _process(delta):
 	if cutscene.finished:
 		cutscene=load("res://cat_dies_cut_scene.tscn").instantiate()
 		menu()
-	print(cutscene)
 	
 
 func _on_hud_start_game():
