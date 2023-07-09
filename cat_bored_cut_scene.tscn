@@ -57,7 +57,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.5, 4.8),
 "transitions": PackedFloat32Array(3.03143, 1, 1),
 "update": 1,
-"values": ["", "I believe... I belive... I don't believe. I don't believe! Take me back! Mrreow!", "Noo i didn't mean to kill you. I was supposed to keep you exited."]
+"values": ["", "This is too boring I'm gonna kill myself", "Wait Noooooo. Sto-. I was supposed to keep you excited but i failed."]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -146,20 +146,20 @@ _data = {
 [node name="cat" parent="." instance=ExtResource("1_x2lj7")]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1132, 702)
-rotation = 1.5708
 scale = Vector2(16, 16)
 animation = &"still standing"
 frame_progress = 0.0
 
 [node name="Boss" parent="." instance=ExtResource("2_u1k5g")]
-modulate = Color(1, 1, 1, 0.56)
-position = Vector2(600, 728)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-237.28, 728)
 scale = Vector2(16, 16)
 frame_progress = 0.59742
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 998.0
@@ -167,6 +167,7 @@ offset_bottom = 439.0
 size_flags_horizontal = 4
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -212,7 +213,7 @@ offset_right = 988.0
 offset_bottom = 200.0
 theme_override_fonts/font = SubResource("FontVariation_eqo6w")
 theme_override_font_sizes/font_size = 53
-text = "Noo i didn't mean to kill you. I was supposed to keep you exited."
+text = "Wait Noooooo. Sto-. I was supposed to keep you excited but i failed."
 autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -222,6 +223,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 438.0
