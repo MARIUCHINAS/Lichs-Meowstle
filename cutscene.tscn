@@ -1,12 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://34p061g1rk16"]
+[gd_scene load_steps=11 format=3 uid="uid://34p061g1rk16"]
 
-[ext_resource type="Script" path="res://Scripts/cutscene.gd" id="1_a8t80"]
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="1_ifs40"]
 [ext_resource type="PackedScene" path="res://boss.tscn" id="2_1ivfc"]
-[ext_resource type="FontFile" uid="uid://ddeyhm8o00i0i" path="res://Fonts/Pixellari.ttf" id="3_sgscb"]
-[ext_resource type="AudioStream" uid="uid://xtb7mjwejqgu" path="res://Sounds/Woosh.wav" id="5_blkk6"]
+[ext_resource type="FontFile" uid="uid://cbheraf52nk0o" path="res://Fonts/Pixellari.ttf" id="3_sgscb"]
+[ext_resource type="AudioStream" uid="uid://ci6gx4tlc80uy" path="res://Sounds/Woosh.wav" id="5_blkk6"]
+
+[sub_resource type="GDScript" id="GDScript_m7fcm"]
+script/source = "extends Node
+
+func _enter_tree():
+	$AnimationPlayer.current_animation = \"Cutscene\"
+	$AnimationPlayer.play(\"Cutscene\")
+"
 
 [sub_resource type="FontVariation" id="FontVariation_8e0lo"]
+base_font = ExtResource("3_sgscb")
+
+[sub_resource type="FontVariation" id="FontVariation_f357w"]
 base_font = ExtResource("3_sgscb")
 
 [sub_resource type="Animation" id="Animation_sers1"]
@@ -58,7 +68,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.5, 4.8),
 "transitions": PackedFloat32Array(3.03143, 1, 1),
 "update": 1,
-"values": ["", "I believe... I belive... I don't believe. I don't believe! Take me back! Mrreow!", "Noo i didn't mean to kill you. I was supposed to keep you exited."]
+"values": ["", "Meow!", "Ka-boom! Hehehehehe. Got-cha"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -127,10 +137,10 @@ tracks/9/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(4.8),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": []
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_s4hxj"]
@@ -145,11 +155,11 @@ _data = {
 [node name="Cutscene" type="Node2D"]
 visible = false
 z_index = 13
-script = ExtResource("1_a8t80")
+script = SubResource("GDScript_m7fcm")
 
 [node name="cat" parent="." instance=ExtResource("1_ifs40")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1132, 702)
+modulate = Color(1, 1, 1, 0.24)
+position = Vector2(1129.17, 702)
 scale = Vector2(16, 16)
 animation = &"still standing"
 frame_progress = 0.0
@@ -203,16 +213,19 @@ offset_right = 433.0
 offset_bottom = 430.0
 theme_override_fonts/font = SubResource("FontVariation_8e0lo")
 theme_override_font_sizes/font_size = 53
+autowrap_mode = 3
 
 [node name="DialogLabel" type="Label" parent="CanvasLayer/Control"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 8.0
 offset_top = 86.0
-offset_right = 436.0
+offset_right = 1030.0
 offset_bottom = 143.0
-theme_override_fonts/font = SubResource("FontVariation_8e0lo")
+scale = Vector2(0.96, 1)
+theme_override_fonts/font = SubResource("FontVariation_f357w")
 theme_override_font_sizes/font_size = 53
+autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cn0jyooqnjbks" path="res://cat.tscn" id="3_8mrqr"]
 [ext_resource type="PackedScene" path="res://light.tscn" id="3_ich5v"]
 [ext_resource type="PackedScene" uid="uid://cname5jyvgqpl" path="res://Scenes/stat.tscn" id="3_uliyg"]
-[ext_resource type="AudioStream" uid="uid://n2aadm1ncppe" path="res://Sounds/Meeh.wav" id="4_8yakk"]
+[ext_resource type="AudioStream" uid="uid://ig30qtfishdn" path="res://Sounds/Meeh.wav" id="4_8yakk"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0qxs2"]
 blend_mode = 2
